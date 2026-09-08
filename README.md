@@ -253,6 +253,23 @@ ESPN marca el partido como terminado.
 
 **El respaldo es un solo archivo:** copia `datos/quiniela.json` y ya tienes todo.
 
+### Apaga el servidor antes de reiniciar la temporada
+
+```bash
+node herramientas/reiniciar-temporada.js            # dice qué haría
+node herramientas/reiniciar-temporada.js --hazlo    # lo hace
+```
+
+Deja pagos, picks, marcadores y puntajes a mano en ceros, respaldando antes en
+`datos/respaldos/`. Las cuentas se quedan con su contraseña, salvo que se pida
+`--borrar-jugadores`.
+
+**No corre si el servidor está prendido, y con razón.** El servidor trae la base
+cargada en memoria y la reescribe completa cada vez que guarda algo; si se toca
+el archivo por debajo, el primer guardado del servidor revive todo lo borrado y
+el reinicio se pierde sin que nadie se entere. Lo mismo aplica si algún día se
+edita `quiniela.json` a mano: apaga el servidor primero.
+
 ---
 
 ## Pruebas
