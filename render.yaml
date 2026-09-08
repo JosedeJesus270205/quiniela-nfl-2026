@@ -1,5 +1,8 @@
 # Despliegue en Render (render.com).
 #
+# Render lee este archivo solo si se crea el servicio como "Blueprint".
+# Ver README.md, seccion "Publicar en internet".
+#
 # Se eligio Render porque la quiniela necesita DOS cosas que un hosting de
 # solo archivos no da:
 #
@@ -8,25 +11,41 @@
 #   2. Un disco que no se borre en cada despliegue. Los jugadores, pagos y
 #      picks viven en datos/quiniela.json, y ese archivo tiene que sobrevivir.
 #
-# El disco de abajo se monta justo en datos/, asi que los datos quedan aparte
-# del codigo y un despliegue nuevo no los toca.
+# El disco de abajo se monta en /var/datos, asi que los datos quedan aparte del
+# codigo y un despliegue nuevo no los toca. El calendario si viaja con el
+# codigo: el servidor lo busca en el disco y, si no esta, en la carpeta del
+# proyecto.
 
 services:
   - type: web
     name: quiniela-nfl
     runtime: node
-    plan: starter          # el plan gratis NO tiene disco persistente
+    # El plan gratis NO sirve aqui: se duerme y borra el disco en cada
+    # reinicio, o sea que se perderian los picks. Starter es el minimo que
+    # admite disco persistente.
+    plan: starter
     region: oregon
-    buildCommand: echo "sin dependencias que instalar"
+    branch: master
+
+    # No hay dependencias que instalar: el proyecto solo usa lo que trae Node.
+    buildCommand: node --test pruebas.js
     startCommand: node servidor.js
+
+    # /api/ambiente responde sin necesidad de sesion, asi que sirve de pulso.
     healthCheckPath: /api/ambiente
 
     envVars:
-      # Render asigna el puerto por PORT; el servidor lee QUINIELA_PUERTO.
-      - key: QUINIELA_PUERTO
-        value: 10000
+      # Donde viven los datos. Tiene que coincidir con mountPath de abajo.
       - key: QUINIELA_DATOS
         value: /var/datos
+
+      # La contrasena del panel de administracion. Render la pide al crear el
+      # servicio y no queda escrita en el repo ni en el disco.
+      - key: QUINIELA_ADMIN
+        sync: false
+
+      - key: NODE_VERSION
+        value: "22"
 
     disk:
       name: datos

@@ -24,7 +24,9 @@ var reloj = require('./lib/reloj');
 var PUBLICO = path.join(__dirname, 'publico');
 var LIMITE_CUERPO = 256 * 1024;
 
-var puerto = Number(process.env.QUINIELA_PUERTO) || 4400;
+// PORT es lo que inyecta el servicio donde se publica (Render y casi todos).
+// QUINIELA_PUERTO sirve para forzarlo a mano, y --puerto manda sobre los dos.
+var puerto = Number(process.env.QUINIELA_PUERTO) || Number(process.env.PORT) || 4400;
 var i = process.argv.indexOf('--puerto');
 if (i !== -1 && process.argv[i + 1]) puerto = Number(process.argv[i + 1]);
 
