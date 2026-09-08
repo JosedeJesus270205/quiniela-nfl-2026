@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quiniela NFL · Administración</title>
+<link rel="icon" href="img/marca/nfl-claro.png" type="image/png">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- Va arriba de todo: si esto es un ensayo, tiene que verse antes que nada. -->
+<div id="cinta-ensayo" hidden></div>
+
+<!--
+  Este aviso es invisible cuando la hoja de estilos carga (estilos.css lo
+  esconde). Solo se ve cuando alguien abre el archivo suelto en vez de la
+  aplicacion: ahi no hay CSS ni JavaScript y la pagina se ve en blanco y negro.
+-->
+<p id="sin-estilos">
+  <b>Esto es el archivo suelto, no la quiniela.</b><br>
+  Para verla de verdad, arranca el servidor con <code>node servidor.js</code>
+  y abre <a href="http://localhost:4400">http://localhost:4400</a>.<br>
+  Asi como se ve ahorita no hay diseño ni funciona nada, porque el navegador no
+  cargo los estilos ni el codigo.
+</p>
+
+<div class="centro" id="acceso">
+  <div class="tarjeta">
+    <img class="escudo-grande" src="img/marca/nfl-claro.png" alt="NFL" width="66" height="66">
+    <h1>Administración</h1>
+    <p>Pagos, puntos por partido y resultados.</p>
+    <div class="error-caja" id="error-acceso" hidden></div>
+    <form id="form-entrar" style="margin-top:20px">
+      <div class="campo">
+        <label for="clave">Contraseña del panel</label>
+        <input type="password" id="clave" autocomplete="current-password" required autofocus>
+        <div class="ayuda">Está en <code>datos/configuracion.json</code>.</div>
+      </div>
+      <button class="boton" type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<header class="barra" id="barra" hidden>
+  <div class="marca">
+    <img class="escudo" src="img/marca/nfl-claro.png" alt="NFL" width="34" height="34">
+    <div>
+      <div class="nombre">Administración</div>
+      <small>Quiniela NFL</small>
+    </div>
+  </div>
+  <nav>
+    <button data-vista="pagos" aria-current="page">Pagos</button>
+    <button data-vista="puntos">Puntos por partido</button>
+    <button data-vista="picks">Quién eligió qué</button>
+  </nav>
+  <div class="quien">
+    <a href="/" class="boton gris angosto" style="padding:7px 12px;font-size:12.5px;text-decoration:none">Ver como jugador</a>
+    <button class="boton gris angosto" id="salir" style="padding:7px 12px;font-size:12.5px">Salir</button>
+  </div>
+</header>
+
+<main id="app" hidden>
+
+  <!-- ---------------- PAGOS ---------------- -->
+  <section class="vista" id="vista-pagos">
+    <div class="titulo-vista">
+      <h2>Pagos por jugador</h2>
+      <span class="etiqueta" id="resumen-bote"></span>
+    </div>
+
+    <div class="aviso azul">
+      <span class="icono" id="ico-pagos"></span>
+      <div><b class="titulo">Así se liberan los partidos</b>
+      Pica la casilla de la semana en cuanto recibas el depósito: eso es lo único que le
+      abre los partidos al jugador. Cada <span id="cuota-texto">$100</span> vale por una semana,
+      sin importar el orden ni la fecha. De la semana <span id="corte-texto">16</span> en adelante
+      ya no se deposita, pero solo juega quien completó los <span id="total-texto">$1,500</span>.</div>
+    </div>
+
+    <div class="caja">
+      <div style="display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px">
+        <h3>Quién ya pagó</h3>
+        <span class="etiqueta" id="resumen-tablero"></span>
+      </div>
+      <div id="tablero" class="cargando">Cargando…</div>
+      <div class="tablero-leyenda">
+        <i><span class="muestra" style="background:var(--lima)"></span> Pagada · sus partidos abiertos</i>
+        <i><span class="muestra" style="background:var(--fondo);box-shadow:inset 0 0 0 1px var(--linea)"></span> Sin pagar · no puede elegir</i>
+        <i>Pica una casilla para marcarla. Vuelve a picar la última para deshacer.</i>
+      </div>
+    </div>
+
+    <div class="titulo-vista" style="margin-top:26px"><h2>Detalle por jugador</h2></div>
+    <div id="lista-jugadores" class="cargando">Cargando…</div>
+  </section>
+
+  <!-- ---------------- PUNTOS ---------------- -->
+  <section class="vista" id="vista-puntos" hidden>
+    <div class="titulo-vista">
+      <h2>Puntos por partido</h2>
+      <span class="etiqueta">El puntaje se calcula solo</span>
+    </div>
+
+    <div class="aviso azul">
+      <span class="icono" id="ico-puntos"></span>
+      <div><b class="titulo">El puntaje se calcula solo</b>
+      El <b>primer partido de la jornada paga <span id="premio-texto">25</span></b>. Del segundo en
+      adelante arranca en <b><span id="arranque-texto">10</span></b> y sube de uno en uno:
+      10, 11, 12… hasta el último. Así cada partido vale distinto y casi nunca hay empates
+      entre jugadores. El empate en la cancha siempre paga el doble de lo que valga ese partido.
+      <br><br>No tienes que capturar nada. Solo toca los números si quieres corregir algo puntual;
+      se guarda hasta que le picas <b>Guardar cambios</b>.</div>
+    </div>
+
+    <div class="semanas" id="semanas-puntos"></div>
+
+    <div class="caja">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+        <h3 id="titulo-puntos" style="font-size:18px">Semana</h3>
+        <span class="pastilla info" id="estado-semana-puntos"></span>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="boton gris angosto" id="reiniciar-puntos">Volver al puntaje automático</button>
+          <button class="boton angosto" id="guardar-puntos" disabled>Guardar cambios</button>
+        </div>
+      </div>
+      <div id="filas-puntos"></div>
+    </div>
+  </section>
+
+  <!-- ---------------- PICKS ---------------- -->
+  <section class="vista" id="vista-picks" hidden>
+    <div class="titulo-vista">
+      <h2>Quién eligió qué</h2>
+      <button class="boton gris angosto" id="actualizar-resultados">Actualizar resultados desde ESPN</button>
+    </div>
+    <div class="semanas" id="semanas-picks"></div>
+    <div class="caja" id="rejilla-picks">Elige una semana.</div>
+  </section>
+
+</main>
+
+<!-- Diálogo de depósito -->
+<div id="capa-pago" class="centro" hidden
+     style="position:fixed;inset:0;background:rgba(4,6,12,.82);z-index:80;backdrop-filter:blur(4px)">
+  <div class="tarjeta">
+    <h1 style="font-size:20px" id="pago-titulo">Registrar depósito</h1>
+    <p id="pago-estado"></p>
+    <div class="error-caja" id="error-pago" hidden></div>
+    <form id="form-pago" style="margin-top:16px">
+      <div class="campo">
+        <label for="p-monto">Monto</label>
+        <input type="number" id="p-monto" step="50" value="100" required>
+        <div class="ayuda" id="p-equivale"></div>
+      </div>
+      <div class="campo">
+        <label for="p-fecha">Fecha del depósito</label>
+        <input type="date" id="p-fecha" required>
+      </div>
+      <div class="campo">
+        <label for="p-nota">Nota (opcional)</label>
+        <input type="text" id="p-nota" placeholder="Transferencia, efectivo, semana 3…">
+      </div>
+      <div style="display:flex;gap:10px">
+        <button type="button" class="boton gris" id="cancelar-pago">Cancelar</button>
+        <button class="boton" type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="brindis"></div>
+
+<script src="js/dialogo.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

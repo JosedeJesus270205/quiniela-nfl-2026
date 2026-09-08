@@ -1,0 +1,34 @@
+# Despliegue en Render (render.com).
+#
+# Se eligio Render porque la quiniela necesita DOS cosas que un hosting de
+# solo archivos no da:
+#
+#   1. Un proceso de Node vivo. El reloj del servidor es el que decide si un
+#      partido ya cerro; sin proceso no hay candados.
+#   2. Un disco que no se borre en cada despliegue. Los jugadores, pagos y
+#      picks viven en datos/quiniela.json, y ese archivo tiene que sobrevivir.
+#
+# El disco de abajo se monta justo en datos/, asi que los datos quedan aparte
+# del codigo y un despliegue nuevo no los toca.
+
+services:
+  - type: web
+    name: quiniela-nfl
+    runtime: node
+    plan: starter          # el plan gratis NO tiene disco persistente
+    region: oregon
+    buildCommand: echo "sin dependencias que instalar"
+    startCommand: node servidor.js
+    healthCheckPath: /api/ambiente
+
+    envVars:
+      # Render asigna el puerto por PORT; el servidor lee QUINIELA_PUERTO.
+      - key: QUINIELA_PUERTO
+        value: 10000
+      - key: QUINIELA_DATOS
+        value: /var/datos
+
+    disk:
+      name: datos
+      mountPath: /var/datos
+      sizeGB: 1

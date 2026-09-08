@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quiniela NFL</title>
+<link rel="icon" href="img/marca/nfl-claro.png" type="image/png">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- Va arriba de todo: si esto es un ensayo, tiene que verse antes que nada. -->
+<div id="cinta-ensayo" hidden></div>
+
+<!--
+  Este aviso es invisible cuando la hoja de estilos carga (estilos.css lo
+  esconde). Solo se ve cuando alguien abre el archivo suelto en vez de la
+  aplicacion: ahi no hay CSS ni JavaScript y la pagina se ve en blanco y negro.
+-->
+<p id="sin-estilos">
+  <b>Esto es el archivo suelto, no la quiniela.</b><br>
+  Para verla de verdad, arranca el servidor con <code>node servidor.js</code>
+  y abre <a href="http://localhost:4400">http://localhost:4400</a>.<br>
+  Asi como se ve ahorita no hay diseño ni funciona nada, porque el navegador no
+  cargo los estilos ni el codigo.
+</p>
+
+<!-- ===================== ACCESO ===================== -->
+<div class="centro" id="acceso">
+  <div class="tarjeta">
+    <img class="escudo-grande" src="img/marca/nfl-claro.png" alt="NFL" width="66" height="66">
+    <h1>Quiniela NFL</h1>
+    <p>Temporada <span id="temporada">2026</span> · 18 semanas</p>
+
+    <div class="pestanas" role="tablist">
+      <button role="tab" aria-selected="true" data-pestana="entrar">Entrar</button>
+      <button role="tab" aria-selected="false" data-pestana="registro">Registrarme</button>
+    </div>
+
+    <div class="error-caja" id="error-acceso" hidden></div>
+
+    <form id="form-entrar">
+      <div class="campo">
+        <label for="e-correo">Correo</label>
+        <input type="email" id="e-correo" autocomplete="email" required>
+      </div>
+      <div class="campo">
+        <label for="e-clave">Contraseña</label>
+        <input type="password" id="e-clave" autocomplete="current-password" required>
+      </div>
+      <button class="boton" type="submit">Entrar</button>
+    </form>
+
+    <form id="form-registro" hidden>
+      <div class="campo">
+        <label for="r-nombre">Nombre completo</label>
+        <input type="text" id="r-nombre" autocomplete="name" required>
+        <div class="ayuda">Como aparece en la lista de pagos. Nombre y apellido.</div>
+      </div>
+      <div class="campo">
+        <label for="r-correo">Correo</label>
+        <input type="email" id="r-correo" autocomplete="email" required>
+      </div>
+      <div class="campo">
+        <label for="r-tel">Teléfono</label>
+        <input type="tel" id="r-tel" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos" required>
+      </div>
+      <div class="campo">
+        <label for="r-clave">Contraseña</label>
+        <input type="password" id="r-clave" autocomplete="new-password" required>
+        <div class="ayuda">Mínimo 8 caracteres.</div>
+      </div>
+      <button class="boton" type="submit">Crear mi cuenta</button>
+    </form>
+
+    <div class="reglas">
+      <strong>Cómo funciona</strong>
+      <ul>
+        <li>$100 por semana, de la 1 a la 15. Puedes adelantar: $700 te abre 7 semanas.</li>
+        <li>Semanas 16, 17, 18 y eliminatorias: solo para quien completó los $1,500.</li>
+        <li>Cada semana cierra <b>30 minutos antes</b> de su primer partido.</li>
+        <li>El <b>primer partido de la jornada paga 25</b>. Del segundo en adelante:
+            10, 11, 12… hasta el último. Así casi nunca hay empates en la tabla.</li>
+        <li><b>Atinarle al empate paga el doble</b> de lo que valga ese partido.</li>
+        <li>Una vez que confirmas un partido, ya no se puede cambiar.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== APLICACIÓN ===================== -->
+<header class="barra" id="barra" hidden>
+  <div class="marca">
+    <img class="escudo" src="img/marca/nfl-claro.png" alt="NFL" width="34" height="34">
+    <div>
+      <div class="nombre">Quiniela</div>
+      <small id="marca-temporada">Temporada 2026</small>
+    </div>
+  </div>
+  <nav>
+    <button data-vista="partidos" aria-current="page">Partidos</button>
+    <button data-vista="tabla">Tabla</button>
+    <button data-vista="cuenta">Mi cuenta</button>
+  </nav>
+  <div class="quien">
+    <strong id="mi-nombre"></strong>
+    <button class="boton gris angosto" id="salir" style="padding:7px 12px;font-size:12.5px">Salir</button>
+  </div>
+</header>
+
+<main id="app" class="ancho" hidden>
+
+  <!-- ---------- Partidos: tablero de tres columnas ---------- -->
+  <section class="vista" id="vista-partidos">
+    <div class="tablero-general">
+
+      <aside class="columna-jornadas">
+        <div class="cinta-pago" id="cinta-pago"></div>
+        <div class="lista-jornadas" id="lista-jornadas">
+          <div class="rubro etiqueta">Jornadas</div>
+        </div>
+      </aside>
+
+      <div class="columna-centro">
+        <div id="cabecera-jornada"></div>
+        <div id="destacado"></div>
+        <div id="avisos-semana"></div>
+        <div class="tablero-partidos" id="partidos">
+          <div class="cargando">Cargando partidos…</div>
+        </div>
+      </div>
+
+      <aside class="columna-cupon">
+        <div class="cupon" id="cupon"></div>
+      </aside>
+
+    </div>
+  </section>
+
+  <div class="cupon-movil" id="cupon-movil" hidden>
+    <div class="resumen">
+      <span id="movil-texto">selecciones</span>
+      <b id="movil-puntos"></b>
+    </div>
+    <button class="confirmar" id="confirmar-movil">Confirmar</button>
+  </div>
+
+  <!-- ---------- Tabla ---------- -->
+  <section class="vista" id="vista-tabla" hidden>
+   <div class="envoltura">
+    <div class="titulo-vista">
+      <h2>Tabla general</h2>
+      <span class="etiqueta" id="tabla-actualizada"></span>
+    </div>
+    <div class="caja"><div id="tabla-general" class="cargando">Cargando…</div></div>
+
+    <div class="titulo-vista" style="margin-top:28px">
+      <h2>Ganadores por jornada</h2>
+      <span class="etiqueta">De jueves a martes</span>
+    </div>
+    <div id="ganadores-semana"><div class="cargando">Cargando…</div></div>
+   </div>
+  </section>
+
+  <!-- ---------- Mi cuenta ---------- -->
+  <section class="vista" id="vista-cuenta" hidden>
+   <div class="envoltura">
+    <div class="titulo-vista"><h2>Mi cuenta</h2></div>
+    <div class="caja" id="datos-cuenta"></div>
+
+    <div class="caja">
+      <h3>Mi contraseña</h3>
+      <p style="color:var(--suave);font-size:14px;max-width:52ch">
+        Cámbiala cuando quieras. Nadie más la conoce: se guarda cifrada y ni el
+        administrador puede leerla.
+      </p>
+      <div class="error-caja" id="error-clave" hidden></div>
+      <form id="form-mi-clave" style="max-width:400px;margin-top:14px">
+        <div class="campo">
+          <label for="c-actual">Mi contraseña de ahorita</label>
+          <input type="password" id="c-actual" autocomplete="current-password" required>
+        </div>
+        <div class="campo">
+          <label for="c-nueva">Contraseña nueva</label>
+          <input type="password" id="c-nueva" autocomplete="new-password" required>
+          <div class="ayuda">Mínimo 8 caracteres.</div>
+        </div>
+        <div class="campo">
+          <label for="c-repetir">Repítela</label>
+          <input type="password" id="c-repetir" autocomplete="new-password" required>
+        </div>
+        <button class="boton" type="submit">Cambiar mi contraseña</button>
+      </form>
+    </div>
+
+    <div class="caja">
+      <h3>Mis depósitos</h3>
+      <div id="mis-pagos"></div>
+    </div>
+   </div>
+  </section>
+
+</main>
+
+<div id="brindis"></div>
+
+<script src="js/dialogo.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

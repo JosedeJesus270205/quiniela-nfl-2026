@@ -1,0 +1,18 @@
+{
+  "name": "quiniela-nfl",
+  "version": "1.0.0",
+  "description": "Quiniela de la NFL: pagos por semana, candados por horario y puntos por partido.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "node --test pruebas.js",
+    "prueba-completa": "node herramientas/prueba-de-punta-a-punta.js",
+    "calendario": "node herramientas/actualizar-calendario.js",
+    "ensayo": "node ensayo.js",
+    "barrido": "node herramientas/barrido-temporada.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

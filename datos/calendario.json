@@ -1,0 +1,7837 @@
+{
+ "temporada": 2026,
+ "generado": "2026-09-08T17:57:06.632Z",
+ "fuente": "site.api.espn.com · NFL scoreboard",
+ "semanas": {
+  "1": {
+   "inicia": "2026-09-10T00:00:00.000Z",
+   "termina": "2026-09-16T23:59:59.999Z"
+  },
+  "2": {
+   "inicia": "2026-09-17T00:00:00.000Z",
+   "termina": "2026-09-23T23:59:59.999Z"
+  },
+  "3": {
+   "inicia": "2026-09-24T00:00:00.000Z",
+   "termina": "2026-09-30T23:59:59.999Z"
+  },
+  "4": {
+   "inicia": "2026-10-01T00:00:00.000Z",
+   "termina": "2026-10-07T23:59:59.999Z"
+  },
+  "5": {
+   "inicia": "2026-10-08T00:00:00.000Z",
+   "termina": "2026-10-14T23:59:59.999Z"
+  },
+  "6": {
+   "inicia": "2026-10-15T00:00:00.000Z",
+   "termina": "2026-10-21T23:59:59.999Z"
+  },
+  "7": {
+   "inicia": "2026-10-22T00:00:00.000Z",
+   "termina": "2026-10-28T23:59:59.999Z"
+  },
+  "8": {
+   "inicia": "2026-10-29T00:00:00.000Z",
+   "termina": "2026-11-04T23:59:59.999Z"
+  },
+  "9": {
+   "inicia": "2026-11-05T00:00:00.000Z",
+   "termina": "2026-11-11T23:59:59.999Z"
+  },
+  "10": {
+   "inicia": "2026-11-12T00:00:00.000Z",
+   "termina": "2026-11-18T23:59:59.999Z"
+  },
+  "11": {
+   "inicia": "2026-11-19T00:00:00.000Z",
+   "termina": "2026-11-25T23:59:59.999Z"
+  },
+  "12": {
+   "inicia": "2026-11-26T00:00:00.000Z",
+   "termina": "2026-12-02T23:59:59.999Z"
+  },
+  "13": {
+   "inicia": "2026-12-03T00:00:00.000Z",
+   "termina": "2026-12-09T23:59:59.999Z"
+  },
+  "14": {
+   "inicia": "2026-12-10T00:00:00.000Z",
+   "termina": "2026-12-16T23:59:59.999Z"
+  },
+  "15": {
+   "inicia": "2026-12-17T00:00:00.000Z",
+   "termina": "2026-12-23T23:59:59.999Z"
+  },
+  "16": {
+   "inicia": "2026-12-24T00:00:00.000Z",
+   "termina": "2026-12-30T23:59:59.999Z"
+  },
+  "17": {
+   "inicia": "2026-12-31T00:00:00.000Z",
+   "termina": "2027-01-06T23:59:59.999Z"
+  },
+  "18": {
+   "inicia": "2027-01-07T00:00:00.000Z",
+   "termina": "2027-01-13T23:59:59.999Z"
+  }
+ },
+ "equipos": {
+  "SEA": {
+   "abbr": "SEA",
+   "nombre": "Seattle Seahawks",
+   "corto": "Seahawks",
+   "ciudad": "Seattle",
+   "color": "#002a5c",
+   "alterno": "#69be28"
+  },
+  "NE": {
+   "abbr": "NE",
+   "nombre": "New England Patriots",
+   "corto": "Patriots",
+   "ciudad": "New England",
+   "color": "#002a5c",
+   "alterno": "#c60c30"
+  },
+  "LAR": {
+   "abbr": "LAR",
+   "nombre": "Los Angeles Rams",
+   "corto": "Rams",
+   "ciudad": "Los Angeles",
+   "color": "#003594",
+   "alterno": "#ffd100"
+  },
+  "SF": {
+   "abbr": "SF",
+   "nombre": "San Francisco 49ers",
+   "corto": "49ers",
+   "ciudad": "San Francisco",
+   "color": "#aa0000",
+   "alterno": "#b3995d"
+  },
+  "CIN": {
+   "abbr": "CIN",
+   "nombre": "Cincinnati Bengals",
+   "corto": "Bengals",
+   "ciudad": "Cincinnati",
+   "color": "#fb4f14",
+   "alterno": "#000000"
+  },
+  "TB": {
+   "abbr": "TB",
+   "nombre": "Tampa Bay Buccaneers",
+   "corto": "Buccaneers",
+   "ciudad": "Tampa Bay",
+   "color": "#bd1c36",
+   "alterno": "#3e3a35"
+  },
+  "DET": {
+   "abbr": "DET",
+   "nombre": "Detroit Lions",
+   "corto": "Lions",
+   "ciudad": "Detroit",
+   "color": "#0076b6",
+   "alterno": "#bbbbbb"
+  },
+  "NO": {
+   "abbr": "NO",
+   "nombre": "New Orleans Saints",
+   "corto": "Saints",
+   "ciudad": "New Orleans",
+   "color": "#d3bc8d",
+   "alterno": "#000000"
+  },
+  "TEN": {
+   "abbr": "TEN",
+   "nombre": "Tennessee Titans",
+   "corto": "Titans",
+   "ciudad": "Tennessee",
+   "color": "#4495d2",
+   "alterno": "#001532"
+  },
+  "NYJ": {
+   "abbr": "NYJ",
+   "nombre": "New York Jets",
+   "corto": "Jets",
+   "ciudad": "New York",
+   "color": "#115740",
+   "alterno": "#ffffff"
+  },
+  "IND": {
+   "abbr": "IND",
+   "nombre": "Indianapolis Colts",
+   "corto": "Colts",
+   "ciudad": "Indianapolis",
+   "color": "#003b75",
+   "alterno": "#ffffff"
+  },
+  "BAL": {
+   "abbr": "BAL",
+   "nombre": "Baltimore Ravens",
+   "corto": "Ravens",
+   "ciudad": "Baltimore",
+   "color": "#29126f",
+   "alterno": "#000000"
+  },
+  "PIT": {
+   "abbr": "PIT",
+   "nombre": "Pittsburgh Steelers",
+   "corto": "Steelers",
+   "ciudad": "Pittsburgh",
+   "color": "#000000",
+   "alterno": "#ffb612"
+  },
+  "ATL": {
+   "abbr": "ATL",
+   "nombre": "Atlanta Falcons",
+   "corto": "Falcons",
+   "ciudad": "Atlanta",
+   "color": "#a71930",
+   "alterno": "#000000"
+  },
+  "CAR": {
+   "abbr": "CAR",
+   "nombre": "Carolina Panthers",
+   "corto": "Panthers",
+   "ciudad": "Carolina",
+   "color": "#0085ca",
+   "alterno": "#000000"
+  },
+  "CHI": {
+   "abbr": "CHI",
+   "nombre": "Chicago Bears",
+   "corto": "Bears",
+   "ciudad": "Chicago",
+   "color": "#0b1c3a",
+   "alterno": "#e64100"
+  },
+  "JAX": {
+   "abbr": "JAX",
+   "nombre": "Jacksonville Jaguars",
+   "corto": "Jaguars",
+   "ciudad": "Jacksonville",
+   "color": "#007487",
+   "alterno": "#d7a22a"
+  },
+  "CLE": {
+   "abbr": "CLE",
+   "nombre": "Cleveland Browns",
+   "corto": "Browns",
+   "ciudad": "Cleveland",
+   "color": "#472a08",
+   "alterno": "#ff3c00"
+  },
+  "HOU": {
+   "abbr": "HOU",
+   "nombre": "Houston Texans",
+   "corto": "Texans",
+   "ciudad": "Houston",
+   "color": "#021018",
+   "alterno": "#eb0028"
+  },
+  "BUF": {
+   "abbr": "BUF",
+   "nombre": "Buffalo Bills",
+   "corto": "Bills",
+   "ciudad": "Buffalo",
+   "color": "#00338d",
+   "alterno": "#d50a0a"
+  },
+  "LV": {
+   "abbr": "LV",
+   "nombre": "Las Vegas Raiders",
+   "corto": "Raiders",
+   "ciudad": "Las Vegas",
+   "color": "#000000",
+   "alterno": "#a5acaf"
+  },
+  "MIA": {
+   "abbr": "MIA",
+   "nombre": "Miami Dolphins",
+   "corto": "Dolphins",
+   "ciudad": "Miami",
+   "color": "#008e97",
+   "alterno": "#fc4c02"
+  },
+  "MIN": {
+   "abbr": "MIN",
+   "nombre": "Minnesota Vikings",
+   "corto": "Vikings",
+   "ciudad": "Minnesota",
+   "color": "#4f2683",
+   "alterno": "#ffc62f"
+  },
+  "GB": {
+   "abbr": "GB",
+   "nombre": "Green Bay Packers",
+   "corto": "Packers",
+   "ciudad": "Green Bay",
+   "color": "#204e32",
+   "alterno": "#ffb612"
+  },
+  "PHI": {
+   "abbr": "PHI",
+   "nombre": "Philadelphia Eagles",
+   "corto": "Eagles",
+   "ciudad": "Philadelphia",
+   "color": "#06424d",
+   "alterno": "#000000"
+  },
+  "WSH": {
+   "abbr": "WSH",
+   "nombre": "Washington Commanders",
+   "corto": "Commanders",
+   "ciudad": "Washington",
+   "color": "#5a1414",
+   "alterno": "#ffb612"
+  },
+  "LAC": {
+   "abbr": "LAC",
+   "nombre": "Los Angeles Chargers",
+   "corto": "Chargers",
+   "ciudad": "Los Angeles",
+   "color": "#0080c6",
+   "alterno": "#ffc20e"
+  },
+  "ARI": {
+   "abbr": "ARI",
+   "nombre": "Arizona Cardinals",
+   "corto": "Cardinals",
+   "ciudad": "Arizona",
+   "color": "#a40227",
+   "alterno": "#ffffff"
+  },
+  "NYG": {
+   "abbr": "NYG",
+   "nombre": "New York Giants",
+   "corto": "Giants",
+   "ciudad": "New York",
+   "color": "#003c7f",
+   "alterno": "#c9243f"
+  },
+  "DAL": {
+   "abbr": "DAL",
+   "nombre": "Dallas Cowboys",
+   "corto": "Cowboys",
+   "ciudad": "Dallas",
+   "color": "#002a5c",
+   "alterno": "#b0b7bc"
+  },
+  "KC": {
+   "abbr": "KC",
+   "nombre": "Kansas City Chiefs",
+   "corto": "Chiefs",
+   "ciudad": "Kansas City",
+   "color": "#e31837",
+   "alterno": "#ffb612"
+  },
+  "DEN": {
+   "abbr": "DEN",
+   "nombre": "Denver Broncos",
+   "corto": "Broncos",
+   "ciudad": "Denver",
+   "color": "#0a2343",
+   "alterno": "#fc4c02"
+  }
+ },
+ "sedes": {
+  "1353": {
+   "nombre": "Santiago Bernabéu",
+   "ciudad": "Madrid, Spain"
+  },
+  "1781": {
+   "nombre": "Stade de France",
+   "ciudad": "Saint-Denis, France"
+  },
+  "2455": {
+   "nombre": "Wembley Stadium",
+   "ciudad": "London, England"
+  },
+  "3493": {
+   "nombre": "Caesars Superdome",
+   "ciudad": "New Orleans, LA"
+  },
+  "3622": {
+   "nombre": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO"
+  },
+  "3628": {
+   "nombre": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC"
+  },
+  "3673": {
+   "nombre": "Lumen Field",
+   "ciudad": "Seattle, WA"
+  },
+  "3679": {
+   "nombre": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH"
+  },
+  "3687": {
+   "nombre": "AT&T Stadium",
+   "ciudad": "Arlington, TX"
+  },
+  "3712": {
+   "nombre": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL"
+  },
+  "3719": {
+   "nombre": "Northwest Stadium",
+   "ciudad": "Landover, MD"
+  },
+  "3727": {
+   "nombre": "Ford Field",
+   "ciudad": "Detroit, MI"
+  },
+  "3738": {
+   "nombre": "Gillette Stadium",
+   "ciudad": "Foxborough, MA"
+  },
+  "3752": {
+   "nombre": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA"
+  },
+  "3798": {
+   "nombre": "Lambeau Field",
+   "ciudad": "Green Bay, WI"
+  },
+  "3806": {
+   "nombre": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA"
+  },
+  "3810": {
+   "nombre": "Nissan Stadium",
+   "ciudad": "Nashville, TN"
+  },
+  "3812": {
+   "nombre": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN"
+  },
+  "3814": {
+   "nombre": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD"
+  },
+  "3839": {
+   "nombre": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ"
+  },
+  "3874": {
+   "nombre": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH"
+  },
+  "3886": {
+   "nombre": "Raymond James Stadium",
+   "ciudad": "Tampa, FL"
+  },
+  "3891": {
+   "nombre": "Reliant Stadium",
+   "ciudad": "Houston, TX"
+  },
+  "3933": {
+   "nombre": "Soldier Field",
+   "ciudad": "Chicago, IL"
+  },
+  "3937": {
+   "nombre": "Empower Field at Mile High",
+   "ciudad": "Denver, CO"
+  },
+  "3948": {
+   "nombre": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL"
+  },
+  "3970": {
+   "nombre": "State Farm Stadium",
+   "ciudad": "Glendale, AZ"
+  },
+  "4738": {
+   "nombre": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA"
+  },
+  "5239": {
+   "nombre": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN"
+  },
+  "5348": {
+   "nombre": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA"
+  },
+  "5534": {
+   "nombre": "Tottenham Hotspur Stadium",
+   "ciudad": "London, England"
+  },
+  "6501": {
+   "nombre": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV"
+  },
+  "7065": {
+   "nombre": "SoFi Stadium",
+   "ciudad": "Inglewood, CA"
+  },
+  "8219": {
+   "nombre": "Estadio Banorte",
+   "ciudad": "Mexico City, Mexico"
+  },
+  "9119": {
+   "nombre": "Melbourne Cricket Ground",
+   "ciudad": "Melbourne, VIC"
+  },
+  "11930": {
+   "nombre": "FC Bayern Munich Stadium",
+   "ciudad": "Munich, Germany"
+  },
+  "11931": {
+   "nombre": "Maracanã Stadium",
+   "ciudad": "Rio De Janeiro, Brazil"
+  },
+  "11938": {
+   "nombre": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY"
+  }
+ },
+ "partidos": [
+  {
+   "id": "401872656",
+   "semana": 1,
+   "inicio": "2026-09-10T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401872657",
+   "semana": 1,
+   "inicio": "2026-09-11T00:35:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "9119",
+   "sede": "Melbourne Cricket Ground",
+   "ciudad": "Melbourne, VIC",
+   "techo": false
+  },
+  {
+   "id": "401872658",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401872659",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401872660",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401872661",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401872922",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401872923",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401872924",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401872925",
+   "semana": 1,
+   "inicio": "2026-09-13T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401872926",
+   "semana": 1,
+   "inicio": "2026-09-13T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401872927",
+   "semana": 1,
+   "inicio": "2026-09-13T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401872928",
+   "semana": 1,
+   "inicio": "2026-09-13T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401872929",
+   "semana": 1,
+   "inicio": "2026-09-13T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401872930",
+   "semana": 1,
+   "inicio": "2026-09-14T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401872931",
+   "semana": 1,
+   "inicio": "2026-09-15T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401872932",
+   "semana": 2,
+   "inicio": "2026-09-18T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401872933",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401872934",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401872935",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401872936",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401872937",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401872938",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401872939",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401872946",
+   "semana": 2,
+   "inicio": "2026-09-20T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401872940",
+   "semana": 2,
+   "inicio": "2026-09-20T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401872941",
+   "semana": 2,
+   "inicio": "2026-09-20T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401872942",
+   "semana": 2,
+   "inicio": "2026-09-20T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401872943",
+   "semana": 2,
+   "inicio": "2026-09-20T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401872944",
+   "semana": 2,
+   "inicio": "2026-09-20T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401872945",
+   "semana": 2,
+   "inicio": "2026-09-21T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401872947",
+   "semana": 2,
+   "inicio": "2026-09-22T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401872948",
+   "semana": 3,
+   "inicio": "2026-09-25T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401872949",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401872950",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401872951",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401872952",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401872953",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401872954",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401872955",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401872956",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401872957",
+   "semana": 3,
+   "inicio": "2026-09-27T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401872958",
+   "semana": 3,
+   "inicio": "2026-09-27T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401872959",
+   "semana": 3,
+   "inicio": "2026-09-27T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401872960",
+   "semana": 3,
+   "inicio": "2026-09-27T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "11931",
+   "sede": "Maracanã Stadium",
+   "ciudad": "Rio De Janeiro, Brazil",
+   "techo": false
+  },
+  {
+   "id": "401872961",
+   "semana": 3,
+   "inicio": "2026-09-27T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401872962",
+   "semana": 3,
+   "inicio": "2026-09-28T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401872963",
+   "semana": 3,
+   "inicio": "2026-09-29T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401872964",
+   "semana": 4,
+   "inicio": "2026-10-02T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401872965",
+   "semana": 4,
+   "inicio": "2026-10-04T13:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "5534",
+   "sede": "Tottenham Hotspur Stadium",
+   "ciudad": "London, England",
+   "techo": false
+  },
+  {
+   "id": "401872966",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401872967",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401872968",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401872969",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401872970",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401872971",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401872972",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401872973",
+   "semana": 4,
+   "inicio": "2026-10-04T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401872974",
+   "semana": 4,
+   "inicio": "2026-10-04T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401872975",
+   "semana": 4,
+   "inicio": "2026-10-04T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401872976",
+   "semana": 4,
+   "inicio": "2026-10-04T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401872977",
+   "semana": 4,
+   "inicio": "2026-10-04T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401872978",
+   "semana": 4,
+   "inicio": "2026-10-05T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401872979",
+   "semana": 4,
+   "inicio": "2026-10-06T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401872980",
+   "semana": 5,
+   "inicio": "2026-10-09T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401872981",
+   "semana": 5,
+   "inicio": "2026-10-11T13:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "5534",
+   "sede": "Tottenham Hotspur Stadium",
+   "ciudad": "London, England",
+   "techo": false
+  },
+  {
+   "id": "401872982",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401872983",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401872984",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401872985",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401872986",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401872987",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401872988",
+   "semana": 5,
+   "inicio": "2026-10-11T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401872989",
+   "semana": 5,
+   "inicio": "2026-10-11T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401872990",
+   "semana": 5,
+   "inicio": "2026-10-11T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401872991",
+   "semana": 5,
+   "inicio": "2026-10-11T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401872992",
+   "semana": 5,
+   "inicio": "2026-10-11T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401872993",
+   "semana": 5,
+   "inicio": "2026-10-12T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401872994",
+   "semana": 5,
+   "inicio": "2026-10-13T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401872995",
+   "semana": 6,
+   "inicio": "2026-10-16T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401872996",
+   "semana": 6,
+   "inicio": "2026-10-18T13:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "2455",
+   "sede": "Wembley Stadium",
+   "ciudad": "London, England",
+   "techo": false
+  },
+  {
+   "id": "401872997",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401872998",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401872999",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873000",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873001",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873002",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873003",
+   "semana": 6,
+   "inicio": "2026-10-18T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873004",
+   "semana": 6,
+   "inicio": "2026-10-18T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873005",
+   "semana": 6,
+   "inicio": "2026-10-18T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873006",
+   "semana": 6,
+   "inicio": "2026-10-18T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873007",
+   "semana": 6,
+   "inicio": "2026-10-19T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873008",
+   "semana": 6,
+   "inicio": "2026-10-20T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401873010",
+   "semana": 7,
+   "inicio": "2026-10-23T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873011",
+   "semana": 7,
+   "inicio": "2026-10-25T13:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "1781",
+   "sede": "Stade de France",
+   "ciudad": "Saint-Denis, France",
+   "techo": false
+  },
+  {
+   "id": "401873012",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873013",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401873014",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873015",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873016",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401873017",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873018",
+   "semana": 7,
+   "inicio": "2026-10-25T17:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873019",
+   "semana": 7,
+   "inicio": "2026-10-25T20:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873020",
+   "semana": 7,
+   "inicio": "2026-10-25T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873021",
+   "semana": 7,
+   "inicio": "2026-10-25T20:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873022",
+   "semana": 7,
+   "inicio": "2026-10-26T00:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873009",
+   "semana": 7,
+   "inicio": "2026-10-27T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873023",
+   "semana": 8,
+   "inicio": "2026-10-30T00:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873024",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873025",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873026",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401873027",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401873028",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401873029",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873030",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873031",
+   "semana": 8,
+   "inicio": "2026-11-01T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873032",
+   "semana": 8,
+   "inicio": "2026-11-01T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873033",
+   "semana": 8,
+   "inicio": "2026-11-01T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401873034",
+   "semana": 8,
+   "inicio": "2026-11-01T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873035",
+   "semana": 8,
+   "inicio": "2026-11-02T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873036",
+   "semana": 8,
+   "inicio": "2026-11-03T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873037",
+   "semana": 9,
+   "inicio": "2026-11-06T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873038",
+   "semana": 9,
+   "inicio": "2026-11-08T14:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "1353",
+   "sede": "Santiago Bernabéu",
+   "ciudad": "Madrid, Spain",
+   "techo": true
+  },
+  {
+   "id": "401873039",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401873040",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873041",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873042",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873043",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873044",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873045",
+   "semana": 9,
+   "inicio": "2026-11-08T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873046",
+   "semana": 9,
+   "inicio": "2026-11-08T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873047",
+   "semana": 9,
+   "inicio": "2026-11-08T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401873048",
+   "semana": 9,
+   "inicio": "2026-11-08T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873049",
+   "semana": 9,
+   "inicio": "2026-11-08T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873050",
+   "semana": 9,
+   "inicio": "2026-11-09T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873051",
+   "semana": 9,
+   "inicio": "2026-11-10T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873052",
+   "semana": 10,
+   "inicio": "2026-11-13T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873053",
+   "semana": 10,
+   "inicio": "2026-11-15T14:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "11930",
+   "sede": "FC Bayern Munich Stadium",
+   "ciudad": "Munich, Germany",
+   "techo": false
+  },
+  {
+   "id": "401873054",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873055",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401873056",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401873057",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401873058",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873059",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873060",
+   "semana": 10,
+   "inicio": "2026-11-15T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873061",
+   "semana": 10,
+   "inicio": "2026-11-15T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873062",
+   "semana": 10,
+   "inicio": "2026-11-15T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873063",
+   "semana": 10,
+   "inicio": "2026-11-15T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873064",
+   "semana": 10,
+   "inicio": "2026-11-16T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873065",
+   "semana": 10,
+   "inicio": "2026-11-17T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873066",
+   "semana": 11,
+   "inicio": "2026-11-20T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401873067",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873068",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873069",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873070",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401873071",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873072",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873073",
+   "semana": 11,
+   "inicio": "2026-11-22T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873074",
+   "semana": 11,
+   "inicio": "2026-11-22T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873075",
+   "semana": 11,
+   "inicio": "2026-11-22T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401873076",
+   "semana": 11,
+   "inicio": "2026-11-22T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873077",
+   "semana": 11,
+   "inicio": "2026-11-23T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": true,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "8219",
+   "sede": "Estadio Banorte",
+   "ciudad": "Mexico City, Mexico",
+   "techo": false
+  },
+  {
+   "id": "401873078",
+   "semana": 11,
+   "inicio": "2026-11-24T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873079",
+   "semana": 12,
+   "inicio": "2026-11-26T01:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873081",
+   "semana": 12,
+   "inicio": "2026-11-26T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873080",
+   "semana": 12,
+   "inicio": "2026-11-26T21:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873082",
+   "semana": 12,
+   "inicio": "2026-11-27T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401873083",
+   "semana": 12,
+   "inicio": "2026-11-27T20:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401873084",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873085",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401873086",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401873087",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873088",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873089",
+   "semana": 12,
+   "inicio": "2026-11-29T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873090",
+   "semana": 12,
+   "inicio": "2026-11-29T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401873091",
+   "semana": 12,
+   "inicio": "2026-11-29T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401873092",
+   "semana": 12,
+   "inicio": "2026-11-29T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873093",
+   "semana": 12,
+   "inicio": "2026-11-30T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873094",
+   "semana": 12,
+   "inicio": "2026-12-01T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873096",
+   "semana": 13,
+   "inicio": "2026-12-04T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873095",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873097",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401873098",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873099",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401873100",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873101",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873102",
+   "semana": 13,
+   "inicio": "2026-12-06T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401873103",
+   "semana": 13,
+   "inicio": "2026-12-06T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401873104",
+   "semana": 13,
+   "inicio": "2026-12-06T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873105",
+   "semana": 13,
+   "inicio": "2026-12-06T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873106",
+   "semana": 13,
+   "inicio": "2026-12-06T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873107",
+   "semana": 13,
+   "inicio": "2026-12-07T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401873108",
+   "semana": 13,
+   "inicio": "2026-12-08T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873109",
+   "semana": 14,
+   "inicio": "2026-12-11T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873110",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401873111",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873112",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873113",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873114",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873115",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873116",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873117",
+   "semana": 14,
+   "inicio": "2026-12-13T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873118",
+   "semana": 14,
+   "inicio": "2026-12-13T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873119",
+   "semana": 14,
+   "inicio": "2026-12-13T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873120",
+   "semana": 14,
+   "inicio": "2026-12-13T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401873121",
+   "semana": 14,
+   "inicio": "2026-12-13T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873122",
+   "semana": 14,
+   "inicio": "2026-12-14T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873123",
+   "semana": 14,
+   "inicio": "2026-12-15T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401873124",
+   "semana": 15,
+   "inicio": "2026-12-18T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873125",
+   "semana": 15,
+   "inicio": "2026-12-19T22:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873126",
+   "semana": 15,
+   "inicio": "2026-12-20T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401873127",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873128",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401873129",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873130",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873131",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401873132",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  },
+  {
+   "id": "401873133",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873134",
+   "semana": 15,
+   "inicio": "2026-12-20T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873135",
+   "semana": 15,
+   "inicio": "2026-12-20T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873136",
+   "semana": 15,
+   "inicio": "2026-12-20T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873137",
+   "semana": 15,
+   "inicio": "2026-12-20T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873138",
+   "semana": 15,
+   "inicio": "2026-12-21T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873139",
+   "semana": 15,
+   "inicio": "2026-12-22T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873140",
+   "semana": 16,
+   "inicio": "2026-12-25T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3806",
+   "sede": "Lincoln Financial Field",
+   "ciudad": "Philadelphia, PA",
+   "techo": false
+  },
+  {
+   "id": "401873141",
+   "semana": 16,
+   "inicio": "2026-12-25T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873142",
+   "semana": 16,
+   "inicio": "2026-12-25T21:30:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401873143",
+   "semana": 16,
+   "inicio": "2026-12-26T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3673",
+   "sede": "Lumen Field",
+   "ciudad": "Seattle, WA",
+   "techo": false
+  },
+  {
+   "id": "401873144",
+   "semana": 16,
+   "inicio": "2026-12-27T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "sedeId": "3752",
+   "sede": "Acrisure Stadium",
+   "ciudad": "Pittsburgh, PA",
+   "techo": false
+  },
+  {
+   "id": "401873145",
+   "semana": 16,
+   "inicio": "2026-12-27T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873146",
+   "semana": 16,
+   "inicio": "2026-12-27T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873147",
+   "semana": 16,
+   "inicio": "2026-12-27T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873148",
+   "semana": 16,
+   "inicio": "2026-12-27T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401873149",
+   "semana": 16,
+   "inicio": "2026-12-27T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873150",
+   "semana": 16,
+   "inicio": "2026-12-27T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873151",
+   "semana": 16,
+   "inicio": "2026-12-27T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873152",
+   "semana": 16,
+   "inicio": "2026-12-27T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "6501",
+   "sede": "Allegiant Stadium",
+   "ciudad": "Las Vegas, NV",
+   "techo": true
+  },
+  {
+   "id": "401873153",
+   "semana": 16,
+   "inicio": "2026-12-27T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873154",
+   "semana": 16,
+   "inicio": "2026-12-28T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873155",
+   "semana": 16,
+   "inicio": "2026-12-29T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3727",
+   "sede": "Ford Field",
+   "ciudad": "Detroit, MI",
+   "techo": true
+  },
+  {
+   "id": "401873156",
+   "semana": 17,
+   "inicio": "2027-01-01T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873157",
+   "semana": 17,
+   "inicio": "2027-01-03T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873158",
+   "semana": 17,
+   "inicio": "2027-01-03T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "visitante": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873159",
+   "semana": 17,
+   "inicio": "2027-01-03T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "visitante": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "sedeId": "3886",
+   "sede": "Raymond James Stadium",
+   "ciudad": "Tampa, FL",
+   "techo": false
+  },
+  {
+   "id": "401873160",
+   "semana": 17,
+   "inicio": "2027-01-03T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "visitante": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3712",
+   "sede": "EverBank Stadium",
+   "ciudad": "Jacksonville, FL",
+   "techo": false
+  },
+  {
+   "id": "401873161",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "sedeId": "3948",
+   "sede": "Hard Rock Stadium",
+   "ciudad": "Miami Gardens, FL",
+   "techo": false
+  },
+  {
+   "id": "401873162",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "visitante": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "3679",
+   "sede": "Huntington Bank Field",
+   "ciudad": "Cleveland, OH",
+   "techo": false
+  },
+  {
+   "id": "401873163",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873164",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "sedeId": "5348",
+   "sede": "Mercedes-Benz Stadium",
+   "ciudad": "Atlanta, GA",
+   "techo": true
+  },
+  {
+   "id": "401873165",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "visitante": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "sedeId": "3687",
+   "sede": "AT&T Stadium",
+   "ciudad": "Arlington, TX",
+   "techo": true
+  },
+  {
+   "id": "401873166",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3810",
+   "sede": "Nissan Stadium",
+   "ciudad": "Nashville, TN",
+   "techo": false
+  },
+  {
+   "id": "401873167",
+   "semana": 17,
+   "inicio": "2027-01-03T18:00:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873168",
+   "semana": 17,
+   "inicio": "2027-01-03T21:05:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873169",
+   "semana": 17,
+   "inicio": "2027-01-03T21:25:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "3933",
+   "sede": "Soldier Field",
+   "ciudad": "Chicago, IL",
+   "techo": false
+  },
+  {
+   "id": "401873170",
+   "semana": 17,
+   "inicio": "2027-01-04T01:20:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "4738",
+   "sede": "Levi's Stadium",
+   "ciudad": "Santa Clara, CA",
+   "techo": false
+  },
+  {
+   "id": "401873171",
+   "semana": 17,
+   "inicio": "2027-01-05T01:15:00.000Z",
+   "horaConfirmada": true,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873172",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "CAR",
+    "nombre": "Carolina Panthers",
+    "corto": "Panthers",
+    "ciudad": "Carolina",
+    "color": "#0085ca",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "ATL",
+    "nombre": "Atlanta Falcons",
+    "corto": "Falcons",
+    "ciudad": "Atlanta",
+    "color": "#a71930",
+    "alterno": "#000000"
+   },
+   "sedeId": "3628",
+   "sede": "Bank of America Stadium",
+   "ciudad": "Charlotte, NC",
+   "techo": false
+  },
+  {
+   "id": "401873173",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "MIN",
+    "nombre": "Minnesota Vikings",
+    "corto": "Vikings",
+    "ciudad": "Minnesota",
+    "color": "#4f2683",
+    "alterno": "#ffc62f"
+   },
+   "visitante": {
+    "abbr": "CHI",
+    "nombre": "Chicago Bears",
+    "corto": "Bears",
+    "ciudad": "Chicago",
+    "color": "#0b1c3a",
+    "alterno": "#e64100"
+   },
+   "sedeId": "5239",
+   "sede": "U.S. Bank Stadium",
+   "ciudad": "Minneapolis, MN",
+   "techo": true
+  },
+  {
+   "id": "401873174",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "CIN",
+    "nombre": "Cincinnati Bengals",
+    "corto": "Bengals",
+    "ciudad": "Cincinnati",
+    "color": "#fb4f14",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "CLE",
+    "nombre": "Cleveland Browns",
+    "corto": "Browns",
+    "ciudad": "Cleveland",
+    "color": "#472a08",
+    "alterno": "#ff3c00"
+   },
+   "sedeId": "3874",
+   "sede": "Paycor Stadium",
+   "ciudad": "Cincinnati, OH",
+   "techo": false
+  },
+  {
+   "id": "401873175",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "WSH",
+    "nombre": "Washington Commanders",
+    "corto": "Commanders",
+    "ciudad": "Washington",
+    "color": "#5a1414",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "DAL",
+    "nombre": "Dallas Cowboys",
+    "corto": "Cowboys",
+    "ciudad": "Dallas",
+    "color": "#002a5c",
+    "alterno": "#b0b7bc"
+   },
+   "sedeId": "3719",
+   "sede": "Northwest Stadium",
+   "ciudad": "Landover, MD",
+   "techo": false
+  },
+  {
+   "id": "401873176",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "GB",
+    "nombre": "Green Bay Packers",
+    "corto": "Packers",
+    "ciudad": "Green Bay",
+    "color": "#204e32",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "DET",
+    "nombre": "Detroit Lions",
+    "corto": "Lions",
+    "ciudad": "Detroit",
+    "color": "#0076b6",
+    "alterno": "#bbbbbb"
+   },
+   "sedeId": "3798",
+   "sede": "Lambeau Field",
+   "ciudad": "Green Bay, WI",
+   "techo": false
+  },
+  {
+   "id": "401873177",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "IND",
+    "nombre": "Indianapolis Colts",
+    "corto": "Colts",
+    "ciudad": "Indianapolis",
+    "color": "#003b75",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "JAX",
+    "nombre": "Jacksonville Jaguars",
+    "corto": "Jaguars",
+    "ciudad": "Jacksonville",
+    "color": "#007487",
+    "alterno": "#d7a22a"
+   },
+   "sedeId": "3812",
+   "sede": "Lucas Oil Stadium",
+   "ciudad": "Indianapolis, IN",
+   "techo": true
+  },
+  {
+   "id": "401873178",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "KC",
+    "nombre": "Kansas City Chiefs",
+    "corto": "Chiefs",
+    "ciudad": "Kansas City",
+    "color": "#e31837",
+    "alterno": "#ffb612"
+   },
+   "visitante": {
+    "abbr": "LV",
+    "nombre": "Las Vegas Raiders",
+    "corto": "Raiders",
+    "ciudad": "Las Vegas",
+    "color": "#000000",
+    "alterno": "#a5acaf"
+   },
+   "sedeId": "3622",
+   "sede": "Arrowhead Stadium",
+   "ciudad": "Kansas City, MO",
+   "techo": false
+  },
+  {
+   "id": "401873179",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "DEN",
+    "nombre": "Denver Broncos",
+    "corto": "Broncos",
+    "ciudad": "Denver",
+    "color": "#0a2343",
+    "alterno": "#fc4c02"
+   },
+   "visitante": {
+    "abbr": "LAC",
+    "nombre": "Los Angeles Chargers",
+    "corto": "Chargers",
+    "ciudad": "Los Angeles",
+    "color": "#0080c6",
+    "alterno": "#ffc20e"
+   },
+   "sedeId": "3937",
+   "sede": "Empower Field at Mile High",
+   "ciudad": "Denver, CO",
+   "techo": false
+  },
+  {
+   "id": "401873180",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "NE",
+    "nombre": "New England Patriots",
+    "corto": "Patriots",
+    "ciudad": "New England",
+    "color": "#002a5c",
+    "alterno": "#c60c30"
+   },
+   "visitante": {
+    "abbr": "MIA",
+    "nombre": "Miami Dolphins",
+    "corto": "Dolphins",
+    "ciudad": "Miami",
+    "color": "#008e97",
+    "alterno": "#fc4c02"
+   },
+   "sedeId": "3738",
+   "sede": "Gillette Stadium",
+   "ciudad": "Foxborough, MA",
+   "techo": false
+  },
+  {
+   "id": "401873181",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "BUF",
+    "nombre": "Buffalo Bills",
+    "corto": "Bills",
+    "ciudad": "Buffalo",
+    "color": "#00338d",
+    "alterno": "#d50a0a"
+   },
+   "visitante": {
+    "abbr": "NYJ",
+    "nombre": "New York Jets",
+    "corto": "Jets",
+    "ciudad": "New York",
+    "color": "#115740",
+    "alterno": "#ffffff"
+   },
+   "sedeId": "11938",
+   "sede": "Highmark Stadium",
+   "ciudad": "Orchard Park, NY",
+   "techo": false
+  },
+  {
+   "id": "401873182",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "NYG",
+    "nombre": "New York Giants",
+    "corto": "Giants",
+    "ciudad": "New York",
+    "color": "#003c7f",
+    "alterno": "#c9243f"
+   },
+   "visitante": {
+    "abbr": "PHI",
+    "nombre": "Philadelphia Eagles",
+    "corto": "Eagles",
+    "ciudad": "Philadelphia",
+    "color": "#06424d",
+    "alterno": "#000000"
+   },
+   "sedeId": "3839",
+   "sede": "MetLife Stadium",
+   "ciudad": "East Rutherford, NJ",
+   "techo": false
+  },
+  {
+   "id": "401873183",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "BAL",
+    "nombre": "Baltimore Ravens",
+    "corto": "Ravens",
+    "ciudad": "Baltimore",
+    "color": "#29126f",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "PIT",
+    "nombre": "Pittsburgh Steelers",
+    "corto": "Steelers",
+    "ciudad": "Pittsburgh",
+    "color": "#000000",
+    "alterno": "#ffb612"
+   },
+   "sedeId": "3814",
+   "sede": "M&T Bank Stadium",
+   "ciudad": "Baltimore, MD",
+   "techo": false
+  },
+  {
+   "id": "401873184",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "ARI",
+    "nombre": "Arizona Cardinals",
+    "corto": "Cardinals",
+    "ciudad": "Arizona",
+    "color": "#a40227",
+    "alterno": "#ffffff"
+   },
+   "visitante": {
+    "abbr": "SF",
+    "nombre": "San Francisco 49ers",
+    "corto": "49ers",
+    "ciudad": "San Francisco",
+    "color": "#aa0000",
+    "alterno": "#b3995d"
+   },
+   "sedeId": "3970",
+   "sede": "State Farm Stadium",
+   "ciudad": "Glendale, AZ",
+   "techo": true
+  },
+  {
+   "id": "401873185",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "LAR",
+    "nombre": "Los Angeles Rams",
+    "corto": "Rams",
+    "ciudad": "Los Angeles",
+    "color": "#003594",
+    "alterno": "#ffd100"
+   },
+   "visitante": {
+    "abbr": "SEA",
+    "nombre": "Seattle Seahawks",
+    "corto": "Seahawks",
+    "ciudad": "Seattle",
+    "color": "#002a5c",
+    "alterno": "#69be28"
+   },
+   "sedeId": "7065",
+   "sede": "SoFi Stadium",
+   "ciudad": "Inglewood, CA",
+   "techo": false
+  },
+  {
+   "id": "401873186",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "NO",
+    "nombre": "New Orleans Saints",
+    "corto": "Saints",
+    "ciudad": "New Orleans",
+    "color": "#d3bc8d",
+    "alterno": "#000000"
+   },
+   "visitante": {
+    "abbr": "TB",
+    "nombre": "Tampa Bay Buccaneers",
+    "corto": "Buccaneers",
+    "ciudad": "Tampa Bay",
+    "color": "#bd1c36",
+    "alterno": "#3e3a35"
+   },
+   "sedeId": "3493",
+   "sede": "Caesars Superdome",
+   "ciudad": "New Orleans, LA",
+   "techo": true
+  },
+  {
+   "id": "401873187",
+   "semana": 18,
+   "inicio": "2027-01-10T05:00:00.000Z",
+   "horaConfirmada": false,
+   "neutral": false,
+   "local": {
+    "abbr": "HOU",
+    "nombre": "Houston Texans",
+    "corto": "Texans",
+    "ciudad": "Houston",
+    "color": "#021018",
+    "alterno": "#eb0028"
+   },
+   "visitante": {
+    "abbr": "TEN",
+    "nombre": "Tennessee Titans",
+    "corto": "Titans",
+    "ciudad": "Tennessee",
+    "color": "#4495d2",
+    "alterno": "#001532"
+   },
+   "sedeId": "3891",
+   "sede": "Reliant Stadium",
+   "ciudad": "Houston, TX",
+   "techo": true
+  }
+ ]
+}

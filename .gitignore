@@ -1,0 +1,16 @@
+# Datos vivos de la quiniela: jugadores, pagos y picks. Nunca al repositorio.
+datos/quiniela.json
+datos/quiniela.json.tmp
+datos/configuracion.json
+datos/resultados.json
+
+# Los respaldos traen los mismos datos: jamas al repositorio.
+datos/respaldos/
+
+# La carpeta del modo ensayo se rehace sola en cada corrida.
+ensayo/
+
+node_modules/
+*.log
+Thumbs.db
+desktop.ini

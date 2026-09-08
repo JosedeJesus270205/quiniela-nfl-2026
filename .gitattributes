@@ -1,0 +1,7 @@
+# Todo el codigo se guarda con saltos de linea de Unix, sin importar en que
+# sistema se edite. Evita que un archivo aparezca "cambiado" solo por eso.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.cmd text eol=crlf
+*.ps1 text eol=crlf

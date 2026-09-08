@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "quiniela",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/FSMP_1/Desktop/QUINIELA-NFL/servidor.js"],
+      "port": 4400
+    }
+  ]
+}
