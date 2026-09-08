@@ -382,14 +382,59 @@ equipos, con rayas de yarda encima.
 
 ---
 
-## Cuando lo quieras publicar
+## Publicar en internet
 
-Hoy corre local. Para sacarlo a internet hay que resolver tres cosas:
+El repo esta en **github.com/JosedeJesus270205/quiniela-nfl-2026** (privado).
 
-1. **Un servidor que corra Node** (Render, Railway, Fly, un VPS). No sirve un
-   hosting de solo archivos como Netlify, porque el reloj del servidor y los
-   candados necesitan un proceso vivo.
-2. **HTTPS**, porque van contraseñas.
-3. **La base de datos.** `datos/quiniela.json` funciona bien para un grupo, pero
-   hay que asegurarse de que la carpeta `datos/` sea persistente en ese servicio
-   (muchos borran el disco en cada despliegue).
+Para que la quiniela viva en internet hace falta algo que un hosting de solo
+archivos (Netlify, GitHub Pages) no da:
+
+1. **Un proceso de Node vivo.** El reloj del servidor es el que decide si un
+   partido ya cerro. Sin proceso no hay candados.
+2. **Un disco que sobreviva a los despliegues.** Jugadores, pagos y picks viven
+   en `datos/quiniela.json`. Si el disco se borra al reiniciar, se pierde todo.
+3. **HTTPS**, porque van contrasenas.
+
+### El detalle incomodo de los planes gratis
+
+Casi ningun plan gratis cumple los tres. Los dos que fallan son siempre los
+mismos: **se duermen** cuando nadie entra (la primera visita tarda ~50 segundos)
+y **borran el disco** en cada reinicio. Lo segundo es fatal aqui: los picks se
+irian.
+
+- **Render, plan gratis:** se duerme y el disco es efimero. No sirve.
+- **Render, plan Starter:** ~7 USD al mes, siempre despierto y con disco de
+  verdad. El `render.yaml` de este repo ya esta configurado para eso.
+- **Northflank, plan Sandbox:** dice explicitamente "always-on compute, no
+  sleeping", con 2 servicios y 1 base de datos gratis. Falta confirmar si el
+  plan gratis incluye disco persistente.
+
+### Si el plan gratis no da disco
+
+Hay salida: mover los datos de `datos/quiniela.json` a la base de datos que si
+regalan. Toda la escritura pasa por `lib/almacen.js`, asi que el cambio queda
+contenido ahi; lo demas del sistema no se entera.
+
+### La opcion de costo cero que si funciona hoy
+
+Correrla en la maquina de siempre y abrirla al mundo con un tunel de Cloudflare
+(gratis, da una direccion https estable). Los datos se quedan en el disco de
+uno, que es donde ya estan. La condicion es tener la maquina prendida los dias
+de partido: de jueves a lunes.
+
+### Como se configura al publicar
+
+El servidor lee dos variables de entorno:
+
+| Variable | Para que |
+|---|---|
+| `QUINIELA_PUERTO` | El puerto donde escucha (por omision 4400) |
+| `QUINIELA_DATOS` | La carpeta de los datos. Se apunta al disco persistente |
+
+El calendario se busca primero en `QUINIELA_DATOS` y, si no esta ahi, en la
+carpeta `datos/` del propio proyecto — que es lo que pasa al publicar, porque el
+calendario viaja con el codigo y los datos van en otro disco.
+
+La contrasena del panel se genera sola la primera vez y queda en
+`configuracion.json`, dentro de la carpeta de datos. **Cambiala antes de pasarle
+la direccion a nadie.**
