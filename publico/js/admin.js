@@ -609,8 +609,14 @@
         return;
       }
 
-      var abrev = { local: 'L', visitante: 'V', empate: 'E' };
       var color = { local: 'var(--lima)', visitante: 'var(--verde)', empate: 'var(--ambar)' };
+
+      // Que equipo eligio, por sus siglas. "Local" y "visitante" no le dicen
+      // nada a nadie de un vistazo; "SEA" si.
+      function siglas(p, eleccion) {
+        if (eleccion === 'empate') return 'EMP';
+        return p[eleccion];
+      }
 
       $('rejilla-picks').innerHTML =
         '<table class="tabla"><thead><tr><th>Jugador</th>' +
@@ -623,16 +629,18 @@
             d.partidos.map(function (p) {
               var pk = j.picks[p.id];
               if (!pk) return '<td style="text-align:center;color:var(--tenue)">·</td>';
-              return '<td style="text-align:center;font-family:var(--dato);font-weight:700;font-size:15px;color:' +
+              return '<td style="text-align:center;font-family:var(--dato);font-weight:700;font-size:12px;letter-spacing:.04em;color:' +
                 color[pk.eleccion] + ';opacity:' + (pk.confirmado ? 1 : 0.4) + '"' +
-                ' title="' + pk.eleccion + (pk.confirmado ? ' · confirmado' : ' · SIN CONFIRMAR') + '">' +
-                abrev[pk.eleccion] + '</td>';
+                ' title="' + siglas(p, pk.eleccion) + ' (' + pk.eleccion + ')' +
+                (pk.confirmado ? ' · confirmado' : ' · SIN CONFIRMAR') + '">' +
+                siglas(p, pk.eleccion) + '</td>';
             }).join('') + '</tr>';
         }).join('') + '</tbody></table>' +
         '<p style="color:var(--tenue);font-size:12.5px;margin-top:14px">' +
-          '<b style="color:var(--lima)">L</b> local · ' +
-          '<b style="color:var(--verde)">V</b> visitante · ' +
-          '<b style="color:var(--ambar)">E</b> empate. ' +
+          'Cada celda dice a qué equipo le entró: ' +
+          '<b style="color:var(--verde)">siglas en verde</b> si es el visitante, ' +
+          '<b style="color:var(--lima)">en lima</b> si es el de casa, ' +
+          '<b style="color:var(--ambar)">EMP</b> si le fue al empate. ' +
           'Los que se ven tenues están elegidos pero <b>sin confirmar</b>: esos no cuentan puntos.</p>';
     }).catch(function (e) { brindis(e.message, 'mal'); });
   }

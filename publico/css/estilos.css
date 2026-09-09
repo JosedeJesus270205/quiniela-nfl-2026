@@ -258,7 +258,7 @@ main.ancho { max-width: none; padding: 0; }
 
 .encabezado-columnas {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) repeat(3, 74px) 104px;
+  grid-template-columns: 86px minmax(0, 1fr) repeat(3, 92px) 96px;
   gap: 8px; align-items: center;
   padding: 8px 18px;
   border-bottom: 1px solid var(--linea);
@@ -270,10 +270,12 @@ main.ancho { max-width: none; padding: 0; }
   text-transform: uppercase; color: var(--tenue); font-weight: 600;
 }
 .encabezado-columnas .centrado { text-align: center; }
+/* "Quien gana" abarca las tres columnas de opciones. */
+.encabezado-columnas .abarca { grid-column: span 3; }
 
 .renglon {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) repeat(3, 74px) 104px;
+  grid-template-columns: 86px minmax(0, 1fr) repeat(3, 92px) 96px;
   gap: 8px; align-items: center;
   padding: 7px 18px;
   border-bottom: 1px solid var(--linea);
@@ -321,10 +323,13 @@ main.ancho { max-width: none; padding: 0; }
 .opcion:active:not(:disabled) { transform: scale(.97); }
 
 .opcion .rotulo {
-  font-family: var(--dato); font-size: 10.5px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--tenue);
-  line-height: 1;
+  font-family: var(--dato); font-size: 11.5px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--suave);
+  line-height: 1.05;
+  max-width: 100%; padding: 0 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.opcion[aria-pressed="true"] .rotulo { color: rgba(20,23,10,.72); }
 .opcion .valor {
   font-family: var(--dato); font-size: 18px; font-weight: 700;
   line-height: 1; font-variant-numeric: tabular-nums;
@@ -726,4 +731,12 @@ main .aviso, .caja .aviso { border: 1px solid var(--linea); border-radius: var(-
   font-family: var(--dato); font-size: 11.5px; font-weight: 700;
   letter-spacing: .04em; color: var(--ambar);
   font-variant-numeric: tabular-nums;
+}
+
+/* Marca de "juega en su casa", discreta. */
+.enfrentamiento .encasa {
+  font-family: var(--dato); font-size: 10px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--tenue);
+  border: 1px solid var(--linea2); border-radius: 3px;
+  padding: 0 4px; line-height: 1.4; flex: 0 0 auto;
 }

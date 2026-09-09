@@ -478,9 +478,14 @@
       clase = p.resultado.ganador === cual ? ' gano'
             : (p.resultado.ganador === 'empate' ? '' : ' perdio');
     }
+    // El de casa lleva una marca chiquita. Quien no distingue local de
+    // visitante ya no la necesita para elegir, pero al que le interesa ahi esta.
+    var casa = cual === 'local' && !p.neutral
+      ? '<span class="encasa" title="Juega en su casa">casa</span>' : '';
+
     return '<span class="equipo-linea' + clase + '">' +
              '<img src="img/equipos/' + e.abbr + '.png" alt="" loading="lazy">' +
-             '<span class="nombre">' + e.corto + '</span>' +
+             '<span class="nombre">' + e.corto + '</span>' + casa +
              (m !== null ? '<span class="marcador">' + m + '</span>' : '') +
            '</span>';
   }
@@ -524,9 +529,9 @@
       '<span class="enfrentamiento">' +
         ladoEquipo(p, 'visitante') + ladoEquipo(p, 'local') +
       '</span>' +
-      opcion(p, 'visitante', 'Visita', p.puntos) +
+      opcion(p, 'visitante', p.visitante.corto, p.puntos) +
       opcion(p, 'empate', 'Empate', p.puntosEmpate) +
-      opcion(p, 'local', 'Local', p.puntos) +
+      opcion(p, 'local', p.local.corto, p.puntos) +
       '<span class="estado-celda">' + estadoCelda + '</span>' +
     '</div>';
   }
@@ -535,9 +540,7 @@
     $('partidos').innerHTML =
       '<div class="encabezado-columnas">' +
         '<span>Hora</span><span>Partido</span>' +
-        '<span class="centrado">Visita</span>' +
-        '<span class="centrado">Empate</span>' +
-        '<span class="centrado">Local</span>' +
+        '<span class="centrado abarca">¿Quién gana?</span>' +
         '<span class="centrado">Estado</span>' +
       '</div>' +
       datosSemana.partidos.map(renglon).join('');
