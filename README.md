@@ -399,6 +399,32 @@ equipos, con rayas de yarda encima.
 
 ---
 
+## El candado del commit
+
+El repositorio es público, y ahí un descuido no se deshace: hay bots que
+archivan repos nuevos en minutos, así que borrar el commit después no borra la
+copia que ya se llevaron. Por eso hay un candado que revisa cada commit **antes**
+de que salga y lo detiene si detecta:
+
+- **Archivos que jamás deben subir**, por su ruta: `quiniela.json`,
+  `configuracion.json`, `resultados.json`, `respaldos/`, `ensayo/`, `.env` y
+  llaves privadas.
+- **Contenido que huele a dato real**: hashes y sales de contraseña, tokens de
+  GitHub, teléfonos de diez dígitos y correos que no sean de ejemplo.
+
+Vive en `.githooks/pre-commit` y en `herramientas/candado-commit.js`, así que
+viaja con el repo. **Después de clonar hay que activarlo una vez:**
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Si algún día para un commit legítimo por error, se salta con
+`git commit --no-verify` — pero vale la pena mirar dos veces qué disparó la
+alarma antes de hacerlo.
+
+---
+
 ## Publicar en internet · Render
 
 El repo esta en **github.com/JosedeJesus270205/quiniela-nfl-2026** (privado).
