@@ -1,0 +1,3 @@
+#!/bin/sh
+# El candado del commit. Ver herramientas/candado-commit.js
+exec node herramientas/candado-commit.js
