@@ -40,26 +40,57 @@ var pagos = function (total) { return total ? [{ monto: total }] : []; };
 
 // ---------------------------------------------------------------------------
 
-test('la semana cierra 30 minutos antes de su primer partido', function () {
-  var cierre = reglas.cierreDeSemana(CAL, 1);
-  assert.strictEqual(cierre.getTime(), JUEVES - 30 * MIN);
+test('cada partido cierra 30 minutos antes del suyo, no del primero', function () {
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[0]).getTime(), JUEVES - 30 * MIN);
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[1]).getTime(), DOMINGO - 30 * MIN);
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[2]).getTime(), LUNES - 30 * MIN);
 });
 
-test('antes del cierre todo esta abierto', function () {
+test('antes de todo, todo esta abierto', function () {
   var ahora = new Date(JUEVES - 60 * MIN);
   CAL.partidos.filter(function (p) { return p.semana === 1; }).forEach(function (p) {
     assert.strictEqual(reglas.estadoDePartido(CAL, p, ahora), 'abierto');
   });
 });
 
-test('a los 30 minutos se cierra la semana completa, no solo el jueves', function () {
+test('cuando cierra el jueves, el domingo y el lunes SIGUEN abiertos', function () {
+  // Este es el cambio: antes cerraba la jornada completa de un golpe.
   var ahora = new Date(JUEVES - 30 * MIN);
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[0], ahora), 'cerrado');
-  assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[1], ahora), 'cerrado');
-  assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[2], ahora), 'cerrado');
+  assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[1], ahora), 'abierto');
+  assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[2], ahora), 'abierto');
 });
 
-test('la semana siguiente sigue abierta cuando la actual ya cerro', function () {
+test('con el jueves ya jugado, el domingo y el lunes se pueden elegir', function () {
+  // Alguien que deposito el domingo temprano todavia alcanza lo que falta.
+  var domingoTemprano = new Date(DOMINGO - 3 * 60 * MIN);
+  assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[0], domingoTemprano), 'iniciado');
+
+  var permiso = reglas.puedeElegir({
+    calendario: CAL, partido: CAL.partidos[2], ahora: domingoTemprano,
+    pagos: pagos(1500), pick: null
+  });
+  assert.strictEqual(permiso.puede, true, 'el lunes sigue disponible');
+});
+
+test('el proximo cierre es el del siguiente partido por jugarse', function () {
+  var antes = new Date(JUEVES - 2 * 60 * MIN);
+  var siguiente = reglas.proximoCierre(CAL, 1, antes);
+  assert.strictEqual(siguiente.partido.id, 'tnf');
+
+  // Ya cerrado el jueves, el proximo es el del domingo.
+  var despues = new Date(JUEVES + 60 * MIN);
+  assert.strictEqual(reglas.proximoCierre(CAL, 1, despues).partido.id, 'dom');
+});
+
+test('la jornada solo esta cerrada cuando cerro su ULTIMO partido', function () {
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(JUEVES - 30 * MIN)), false);
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(DOMINGO)), false);
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(LUNES - 31 * MIN)), false);
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(LUNES - 30 * MIN)), true);
+});
+
+test('la semana siguiente no se entera de lo que pasa en esta', function () {
   var ahora = new Date(JUEVES - 30 * MIN);
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[3], ahora), 'abierto');
 });
@@ -75,13 +106,22 @@ test('REGLA DE ORO: un partido que ya empezo nunca esta abierto', function () {
   });
 });
 
-test('REGLA DE ORO: ni con la semana pagada se puede tocar un partido iniciado', function () {
+test('REGLA DE ORO: ni con la temporada pagada se toca un partido iniciado', function () {
   var r = reglas.puedeElegir({
     calendario: CAL, partido: CAL.partidos[1], ahora: new Date(DOMINGO + 1),
     pagos: pagos(1500), pick: null
   });
   assert.strictEqual(r.puede, false);
   assert.strictEqual(r.motivo, 'iniciado');
+});
+
+test('en los 30 minutos previos ya no se puede, aunque no haya empezado', function () {
+  var r = reglas.puedeElegir({
+    calendario: CAL, partido: CAL.partidos[1], ahora: new Date(DOMINGO - 29 * MIN),
+    pagos: pagos(1500), pick: null
+  });
+  assert.strictEqual(r.puede, false);
+  assert.strictEqual(r.motivo, 'cerrado');
 });
 
 // ---------------------------------------------------------------------------
@@ -273,16 +313,28 @@ test('ningun partido se sale de la ventana de su semana', function () {
   });
 });
 
-test('cada semana real cierra antes de su primer partido', function () {
+test('en el calendario real, cada partido cierra antes de empezar', function () {
+  var real = require('./datos/calendario.json');
+  real.partidos.forEach(function (p) {
+    var cierre = reglas.cierreDePartido(p);
+    assert.ok(cierre.getTime() < Date.parse(p.inicio),
+      p.visitante.abbr + '@' + p.local.abbr + ' cierra despues de empezar');
+    assert.strictEqual(Date.parse(p.inicio) - cierre.getTime(), 30 * 60 * 1000);
+  });
+});
+
+test('en el calendario real, cerrar uno no cierra a los demas', function () {
   var real = require('./datos/calendario.json');
   reglas.semanas(real).forEach(function (n) {
-    var cierre = reglas.cierreDeSemana(real, n);
-    var primero = reglas.partidosDeSemana(real, n)[0];
-    assert.ok(cierre.getTime() < Date.parse(primero.inicio), 'semana ' + n);
-    // Y ningun partido de esa semana empieza antes del cierre.
-    reglas.partidosDeSemana(real, n).forEach(function (p) {
-      assert.ok(Date.parse(p.inicio) > cierre.getTime(), 'semana ' + n + ' partido ' + p.id);
-    });
+    var juegos = reglas.partidosDeSemana(real, n);
+    // Justo cuando cierra el primero, el ultimo tiene que seguir abierto,
+    // salvo que los dos empiecen a la misma hora.
+    var alCerrarElPrimero = reglas.cierreDePartido(juegos[0]);
+    var ultimo = juegos[juegos.length - 1];
+    if (Date.parse(ultimo.inicio) > Date.parse(juegos[0].inicio)) {
+      assert.strictEqual(reglas.estadoDePartido(real, ultimo, alCerrarElPrimero), 'abierto',
+        'semana ' + n + ': el ultimo partido se cerro junto con el primero');
+    }
   });
 });
 

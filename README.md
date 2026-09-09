@@ -52,11 +52,16 @@ inaugural (NE @ SEA, **miércoles 9 de septiembre**) y GB @ LAR la víspera de
 Thanksgiving (**miércoles 25 de noviembre**). Los candados no dependen del día
 de la semana, así que las dos quedan cubiertas.
 
-- **Cada semana cierra 30 minutos antes de SU primer partido**, sea jueves o
-  miércoles. Se cierra completa: el del jueves y el del lunes por igual.
+- **Cada partido cierra 30 minutos antes de SU propio inicio.** No hay una hora
+  única para la jornada: el del jueves cierra el jueves, los del domingo el
+  domingo, el del lunes el lunes.
 - **REGLA DE ORO: un partido que ya inició no se puede tocar jamás.** Se revisa
-  partido por partido, además del cierre de la semana, para que un cambio de
+  partido por partido, además de su propio cierre, para que un cambio de
   horario de la NFL no abra una rendija.
+
+Esto quiere decir que quien deposita el domingo a media tarde **todavía alcanza
+lo que falte de esa jornada**; lo que ya se jugó, ni modo. El pago abre la
+semana cuando llegue.
 
 Las dos se verifican **en el servidor**, con el reloj del servidor. Quien mueva
 la hora de su computadora verá otra cuenta regresiva en pantalla, pero el
@@ -278,7 +283,8 @@ edita `quiniela.json` a mano: apaga el servidor primero.
 node --test pruebas.js
 ```
 
-34 pruebas de las reglas: los dos candados de horario, la regla de oro con
+39 pruebas de las reglas: el cierre por partido (que cerrar el del jueves no
+cierre el del domingo), la regla de oro con
 relojes simulados, los pagos parciales y adelantados, el corte de la semana 16,
 la escalera de puntos (25, 10, 11, 12…) y que se reinicie cada semana, el empate
 al doble, que un pick sin confirmar no pague, que la semana corra de jueves a

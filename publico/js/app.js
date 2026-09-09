@@ -407,12 +407,15 @@
 
     var urgente = restante < 60 * 60 * 1000;
     caja.className = 'cuenta' + (urgente ? ' urgente' : '');
-    caja.innerHTML = ico('reloj') + ' Cierra en <b>' + texto + '</b>';
+    caja.innerHTML = ico('reloj') + ' ' + (datosSemana.cierraPartido || 'El siguiente') +
+                     ' cierra en <b>' + texto + '</b>';
 
-    var algunoArranco = datosSemana.partidos.some(function (p) {
-      return p.estado === 'abierto' && Date.parse(p.inicio) <= ahora();
+    // Si a algun partido se le paso su propia hora estando en pantalla, se
+    // vuelve a pedir la jornada para que el candado baje solo.
+    var alguienCambio = datosSemana.partidos.some(function (p) {
+      return p.estado === 'abierto' && Date.parse(p.cierre) <= ahora();
     });
-    if (algunoArranco) abrirSemana(semanaActual);
+    if (alguienCambio) abrirSemana(semanaActual);
   }
 
   function pintarAvisos() {
@@ -508,6 +511,13 @@
     var hora = p.horaConfirmada
       ? '<b>' + horaCorta(p.inicio) + '</b>' + diaCorto(p.inicio)
       : '<b>' + diaCorto(p.inicio) + '</b><span class="pordef">por definir</span>';
+
+    // Cada partido tiene su propia hora limite. Cuando ya falta poco se avisa
+    // en el renglon, que es donde el jugador esta mirando.
+    var faltaCierre = Date.parse(p.cierre) - ahora();
+    if (p.editable && faltaCierre > 0 && faltaCierre < 6 * 60 * 60 * 1000) {
+      hora += '<span class="urge">cierra en ' + faltante(faltaCierre) + '</span>';
+    }
 
     return '<div class="' + clases.join(' ') + '">' +
       '<span class="cuando">' + hora + '</span>' +

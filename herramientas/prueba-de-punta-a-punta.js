@@ -49,10 +49,10 @@ async function main() {
   var jugadorId = reg.datos.usuario.id;
 
   var malos = [
-    [{ nombre: 'Solo', correo: 'a@b.mx', telefono: '8110000002', contrasena: 'contrasena123' }, 'nombre sin apellido'],
+    [{ nombre: 'Solo', correo: 'malo1@ejemplo.mx', telefono: '8110000002', contrasena: 'contrasena123' }, 'nombre sin apellido'],
     [{ nombre: 'Nombre Apellido', correo: 'nada', telefono: '8110000002', contrasena: 'contrasena123' }, 'correo invalido'],
-    [{ nombre: 'Nombre Apellido', correo: 'c@b.mx', telefono: '123', contrasena: 'contrasena123' }, 'telefono corto'],
-    [{ nombre: 'Nombre Apellido', correo: 'd@b.mx', telefono: '8110000002', contrasena: '123' }, 'contrasena corta']
+    [{ nombre: 'Nombre Apellido', correo: 'malo2@ejemplo.mx', telefono: '123', contrasena: 'contrasena123' }, 'telefono corto'],
+    [{ nombre: 'Nombre Apellido', correo: 'malo3@ejemplo.mx', telefono: '8110000002', contrasena: '123' }, 'contrasena corta']
   ];
   for (var i = 0; i < malos.length; i++) {
     var r = await pedir('/api/registro', { cuerpo: malos[i][0] });
@@ -79,6 +79,15 @@ async function main() {
   var sem = await pedir('/api/semana?n=' + viva.semana, { token: jugador });
   var candidato = sem.datos.partidos.find(function (p) { return p.estado === 'abierto'; });
   ok(!!candidato, 'la semana viva tiene partidos abiertos');
+
+  // Cada partido trae su propia hora limite, 30 min antes del suyo.
+  ok(sem.datos.partidos.every(function (p) {
+    return Date.parse(p.inicio) - Date.parse(p.cierre) === 30 * 60 * 1000;
+  }), 'cada partido cierra 30 min antes del suyo, no del primero');
+
+  var horas = new Set(sem.datos.partidos.map(function (p) { return p.cierre; }));
+  ok(horas.size > 1, 'la jornada tiene varias horas de cierre, no una sola',
+     horas.size + ' horas distintas');
 
   var sinPago = await pedir('/api/pick', {
     token: jugador, cuerpo: { partidoId: candidato.id, eleccion: 'local' }
@@ -207,7 +216,7 @@ async function main() {
 
   // Una semana futura que todavia no esta pagada.
   var futuraSinPago = estado.datos.semanas.find(function (s) {
-    return !s.cerrada && s.semana > viva.semana && (viva.semana * 100) < s.semana * 100;
+    return !s.cerrada && s.semana > viva.semana;
   });
   if (futuraSinPago) {
     var f = await pedir('/api/semana?n=' + futuraSinPago.semana, { token: jugador });

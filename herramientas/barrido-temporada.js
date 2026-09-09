@@ -11,8 +11,9 @@
  * Lo que se revisa en cada escenario:
  *
  *   1. REGLA DE ORO: ningun partido que ya empezo aparece como editable.
- *   2. La semana cierra exactamente 30 min antes de su primer partido.
- *   3. Cuando la semana esta cerrada, lo esta COMPLETA (el lunes tambien).
+ *   2. Cada partido cierra exactamente 30 min antes de SU inicio.
+ *   3. Cerrar uno no cierra a los demas: el del lunes sigue abierto cuando ya
+ *      cerro el del jueves.
  *   4. Quien no tiene pagada la semana no puede tocar ninguno de sus partidos.
  *   5. Los puntos siguen la escalera 25, 10, 11, 12... sin huecos ni repetidos.
  *   6. Un partido no puede estar abierto y ya iniciado a la vez.
@@ -65,11 +66,18 @@ semanas.forEach(function (n) {
   var juegos = reglas.partidosDeSemana(calendario, n);
   var primero = Date.parse(juegos[0].inicio);
   var ultimo = Date.parse(juegos[juegos.length - 1].inicio);
-  var cierre = reglas.cierreDeSemana(calendario, n, C);
+  // --- 2. Cada partido cierra 30 min antes del suyo ---
+  juegos.forEach(function (p, i) {
+    exigir(reglas.cierreDePartido(p, C).getTime() === Date.parse(p.inicio) - C.minutosCierre * MINUTO,
+           'el partido ' + (i + 1) + ' no cierra 30 min antes de empezar', 'S' + n);
+  });
 
-  // --- 2. El cierre esta donde debe ---
-  exigir(cierre.getTime() === primero - C.minutosCierre * MINUTO,
-         'el cierre no es 30 min antes del primer partido', 'S' + n);
+  // --- 3. Cerrar uno no arrastra a los demas ---
+  var ultimoPartido = juegos[juegos.length - 1];
+  if (Date.parse(ultimoPartido.inicio) > primero) {
+    exigir(reglas.estadoDePartido(calendario, ultimoPartido, reglas.cierreDePartido(juegos[0], C), C) === 'abierto',
+           'al cerrar el primero se cerro tambien el ultimo', 'S' + n);
+  }
 
   // --- 5. La escalera de puntos ---
   var valores = juegos.map(function (p) { return tabla[p.id].valor; });
@@ -86,15 +94,21 @@ semanas.forEach(function (n) {
 
   MOMENTOS.forEach(function (m) {
     var etiqueta = m[0];
-    var ahora = new Date(m[1](primero, ultimo, cierre.getTime()));
+    var ahora = new Date(m[1](primero, ultimo, primero - C.minutosCierre * MINUTO));
     var donde = 'S' + n + ' · ' + etiqueta;
     escenarios++;
 
-    var cerrada = ahora.getTime() >= cierre.getTime();
+    // Un escenario con fecha invalida no falla: pasa callado sin probar nada.
+    // Mejor que reviente aqui.
+    if (Number.isNaN(ahora.getTime())) {
+      exigir(false, 'el escenario cayo en una fecha invalida', donde);
+      return;
+    }
 
     juegos.forEach(function (p, i) {
       var estado = reglas.estadoDePartido(calendario, p, ahora, C);
       var arranco = Date.parse(p.inicio) <= ahora.getTime();
+      var cerrado = ahora.getTime() >= reglas.cierreDePartido(p, C).getTime();
 
       // --- 1 y 6. La regla de oro, por partido ---
       if (arranco) {
@@ -104,10 +118,14 @@ semanas.forEach(function (n) {
       exigir(!(estado === 'abierto' && arranco),
              'el partido ' + (i + 1) + ' esta abierto habiendo arrancado', donde);
 
-      // --- 3. Cerrada es cerrada para toda la semana ---
-      if (cerrada && !arranco) {
+      // --- Su propio cierre manda ---
+      if (cerrado && !arranco) {
         exigir(estado === 'cerrado',
-               'la semana cerro pero el partido ' + (i + 1) + ' sigue en "' + estado + '"', donde);
+               'al partido ' + (i + 1) + ' ya le paso su cierre y sigue en "' + estado + '"', donde);
+      }
+      if (!cerrado) {
+        exigir(estado === 'abierto',
+               'el partido ' + (i + 1) + ' esta en "' + estado + '" sin que le llegue su cierre', donde);
       }
 
       // --- Contra las tres carteras ---
@@ -118,7 +136,7 @@ semanas.forEach(function (n) {
         });
 
         // La regla de oro manda sobre todo lo demas.
-        if (arranco || cerrada) {
+        if (arranco || cerrado) {
           exigir(permiso.puede === false,
                  'con "' + cartera.nombre + '" se puede tocar el partido ' + (i + 1) +
                  ' estando ' + estado, donde);
@@ -126,14 +144,14 @@ semanas.forEach(function (n) {
 
         // --- 4. El candado del dinero ---
         var pagada = reglas.semanaPagada(n, cartera.pagos, C);
-        if (!pagada && !arranco && !cerrada) {
+        if (!pagada && !arranco && !cerrado) {
           exigir(permiso.puede === false && permiso.motivo === 'sin_pago',
                  'con "' + cartera.nombre + '" (semana ' + n + ' sin pagar) se cuela al partido ' +
                  (i + 1), donde);
         }
 
         // Con todo pagado y a tiempo, tiene que poder.
-        if (pagada && !arranco && !cerrada) {
+        if (pagada && !arranco && !cerrado) {
           exigir(permiso.puede === true,
                  'con "' + cartera.nombre + '" no puede elegir el partido ' + (i + 1) +
                  ' estando abierto', donde);
@@ -143,7 +161,7 @@ semanas.forEach(function (n) {
   });
 
   var abiertos = juegos.filter(function (p) {
-    return reglas.estadoDePartido(calendario, p, new Date(cierre.getTime() - DIA), C) === 'abierto';
+    return reglas.estadoDePartido(calendario, p, new Date(primero - DIA), C) === 'abierto';
   }).length;
   console.log('  S' + String(n).padStart(2) + '  ' + String(juegos.length).padStart(2) + ' partidos  ' +
               'paga ' + valores.join(' ') +
