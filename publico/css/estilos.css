@@ -740,3 +740,59 @@ main .aviso, .caja .aviso { border: 1px solid var(--linea); border-radius: var(-
   border: 1px solid var(--linea2); border-radius: 3px;
   padding: 0 4px; line-height: 1.4; flex: 0 0 auto;
 }
+
+/* ------------------------------------------- en vivo y ya terminado --- */
+
+/* Sin cupon el tablero se recorre y ocupa el hueco. El cupon solo aparece
+   mientras hay algo por firmar, como en las casas de apuestas.
+
+   Va dentro de la consulta de ancho a proposito: dos clases pesan mas que una,
+   asi que suelta pisaria a las reglas de movil de mas abajo y dejaria el
+   tablero en dos columnas en un telefono. */
+@media (min-width: 1181px) {
+  .tablero-general.sin-cupon { grid-template-columns: 178px minmax(0, 1fr); }
+}
+
+/* EN VIVO: punto rojo que late despacio, no un estrobo. */
+.sello.vivo { background: var(--rojo-f); color: var(--rojo); gap: 6px; }
+.sello.vivo .latido {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--rojo); flex: 0 0 auto;
+  animation: latir-vivo 2.4s ease-in-out infinite;
+}
+.sello.vivo em {
+  font-style: normal; color: var(--suave);
+  font-size: 10.5px; letter-spacing: .04em; margin-left: 2px;
+}
+@keyframes latir-vivo {
+  0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(255, 77, 94, .55); }
+  50%      { opacity: .35; box-shadow: 0 0 0 5px rgba(255, 77, 94, 0); }
+}
+/* A quien le molesta el movimiento, el punto se le queda quieto. */
+@media (prefers-reduced-motion: reduce) {
+  .sello.vivo .latido { animation: none; }
+}
+
+/* El renglon de un partido corriendo: una linea roja a la izquierda. */
+.renglon.corriendo { box-shadow: inset 3px 0 0 var(--rojo); background: rgba(255, 77, 94, .035); }
+
+/* YA TERMINO: se apaga. Las opciones ya no sirven de nada, asi que se van
+   al fondo; el marcador y lo que se gano se quedan legibles. */
+.sello.final { background: var(--panel3); color: var(--suave); }
+.renglon.terminado .opcion { opacity: .3; }
+.renglon.terminado .cuando { opacity: .45; }
+.renglon.terminado .encasa { opacity: .5; }
+.renglon.terminado { background: transparent; }
+
+/* La celda de estado en dos renglones: el sello arriba, el detalle abajo.
+   "EN VIVO 3o · 15:00" en una sola linea pide 152px y la columna da 96. */
+.estado-celda .apilado {
+  display: inline-flex; flex-direction: column;
+  align-items: flex-end; gap: 2px; line-height: 1;
+}
+.reloj-vivo {
+  font-family: var(--dato); font-style: normal;
+  font-size: 11px; letter-spacing: .04em; color: var(--tenue);
+  white-space: nowrap;
+}
+.reloj-vivo.aviso-rojo { color: var(--rojo); text-transform: uppercase; font-weight: 700; }

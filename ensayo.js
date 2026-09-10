@@ -15,6 +15,7 @@
  *   abierta    (por omision) dos dias antes del primer partido: todo se puede
  *   porcerrar  15 minutos antes del cierre: la cuenta regresiva en rojo
  *   cerrada    5 minutos despues del cierre, antes del primer silbatazo
+ *   envivo     con la tanda del domingo corriendo: marcadores moviendose
  *   enmedio    con el primer partido ya jugado y el resto por jugarse
  *   terminada  la jornada completa, con todos los marcadores
  *
@@ -47,7 +48,7 @@ var momento = arg('momento', 'abierta');
 var puerto = Number(arg('puerto', 4500));
 var soloRevisar = bandera('revisar');
 
-var MOMENTOS = ['abierta', 'porcerrar', 'cerrada', 'enmedio', 'terminada'];
+var MOMENTOS = ['abierta', 'porcerrar', 'cerrada', 'envivo', 'enmedio', 'terminada'];
 if (MOMENTOS.indexOf(momento) === -1) {
   console.error('\n  --momento tiene que ser uno de: ' + MOMENTOS.join(', ') + '\n');
   process.exit(1);
@@ -101,6 +102,22 @@ function momentoDe(n, cual) {
   if (cual === 'porcerrar') return cierre - 15 * MINUTO;
   if (cual === 'cerrada') return cierre + 5 * MINUTO;
   if (cual === 'enmedio') return primero + 4 * 60 * MINUTO;
+
+  // "envivo": hora y media despues del silbatazo de la tanda mas grande de la
+  // jornada, que es la del domingo por la tarde. Ahi hay varios partidos
+  // corriendo a la vez, que es justo lo que hay que poder ver antes de que
+  // pase de verdad.
+  if (cual === 'envivo') {
+    var tandas = {};
+    juegos.forEach(function (p) {
+      tandas[p.inicio] = (tandas[p.inicio] || 0) + 1;
+    });
+    var mayor = Object.keys(tandas).sort(function (a, b) {
+      return tandas[b] - tandas[a] || a.localeCompare(b);
+    })[0];
+    return Date.parse(mayor) + 90 * MINUTO;
+  }
+
   return ultimo + 4 * 60 * MINUTO;   // terminada
 }
 

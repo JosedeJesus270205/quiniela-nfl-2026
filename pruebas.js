@@ -473,3 +473,74 @@ test('una jornada se puede empatar entre dos', function () {
   var otro = reglas.puntosGanados({ eleccion: 'local', confirmado: true }, 'tnf', res.tnf, tabla);
   assert.strictEqual(uno, otro, 'dos que eligen igual suman igual y se reparten la jornada');
 });
+
+// ---------------------------------------------------------------------------
+// El marcador en vivo
+//
+// Lo unico que de verdad importa aqui: que un marcador a medio partido nunca
+// se convierta en puntos. Los puntos salen del resultado FINAL guardado, y
+// esa puerta es la unica.
+// ---------------------------------------------------------------------------
+
+var vivo = require('./lib/vivo');
+
+test('sin partidos corriendo no se le pregunta nada a ESPN', async function () {
+  // Dos dias antes del primero: no hay nada que consultar. Si esto se pusiera
+  // a pedirle datos a ESPN, estaria despertando a la red todo el martes.
+  var antes = new Date(JUEVES - 2 * 24 * 60 * MIN);
+  var real = Date.now;
+  Date.now = function () { return antes.getTime(); };
+  try {
+    var r = await vivo.deLaSemana(2026, 1, reglas.partidosDeSemana(CAL, 1), { partidos: {} });
+    assert.deepStrictEqual(r.partidos, {}, 'no devuelve estados');
+    assert.deepStrictEqual(r.porCerrar, [], 'no hay nada que cerrar');
+  } finally {
+    Date.now = real;
+  }
+});
+
+test('un marcador en vivo NO da puntos', function () {
+  var tabla = reglas.tablaDePuntos(CAL, {});
+  var pick = { eleccion: 'local', confirmado: true };
+
+  // El local va ganando 21-14, pero el partido no ha terminado: sin "final"
+  // no hay puntos, por mucho que vaya arriba.
+  var enVivo = { final: false, marcadorLocal: 21, marcadorVisitante: 14 };
+  assert.strictEqual(reglas.puntosGanados(pick, 'tnf', enVivo, tabla), 0,
+    'un partido a medias no puede pagar');
+
+  // Ya terminado, con el mismo marcador, si paga.
+  var final = { final: true, marcadorLocal: 21, marcadorVisitante: 14 };
+  assert.ok(reglas.puntosGanados(pick, 'tnf', final, tabla) > 0,
+    'ya terminado si paga');
+});
+
+test('semanasEnJuego solo trae semanas con algo pendiente', function () {
+  var real = Date.now;
+
+  // Antes de que arranque nada.
+  Date.now = function () { return JUEVES - 60 * MIN; };
+  try {
+    assert.deepStrictEqual(vivo.semanasEnJuego(CAL, { partidos: {} }), [],
+      'antes del primer silbatazo no hay nada que vigilar');
+
+    // Con la jornada ya jugada y TODOS los marcadores guardados, tampoco.
+    Date.now = function () { return LUNES + 12 * 60 * MIN; };
+    var todos = { partidos: {} };
+    CAL.partidos.forEach(function (p) {
+      todos.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17 };
+    });
+    assert.deepStrictEqual(vivo.semanasEnJuego(CAL, todos), [],
+      'ya contados todos, no hay por que seguir preguntando');
+
+    // Pero si falta uno por cerrar, esa semana si se vigila.
+    var falta = { partidos: {} };
+    CAL.partidos.slice(1).forEach(function (p) {
+      falta.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17 };
+    });
+    assert.deepStrictEqual(vivo.semanasEnJuego(CAL, falta), [1],
+      'con un partido sin marcador, la semana sigue en la lista');
+  } finally {
+    Date.now = real;
+  }
+});

@@ -17,6 +17,7 @@
   var estado = null;       // respuesta de /api/estado
   var semanaActual = null; // numero de semana en pantalla
   var datosSemana = null;  // respuesta de /api/semana
+  var envivo = null;       // temporizador del marcador en vivo
   var desfase = 0;         // reloj del servidor menos el del navegador
   var cronometro = null;
 
@@ -328,10 +329,20 @@
 
   // ================================================================= TABLERO ==
 
-  function abrirSemana(n) {
+  /**
+   * Trae y pinta una jornada.
+   *
+   * Con `callado` no se enseña el "Cargando…": es para el refresco del
+   * marcador en vivo, que entra solo cada medio minuto. Sin esto, el tablero
+   * se vaciaria y se volveria a llenar cada 30 segundos, con su parpadeo y su
+   * brinco de scroll, justo mientras el jugador esta viendo los partidos.
+   */
+  function abrirSemana(n, callado) {
     semanaActual = n;
     pintarListaJornadas();
-    $('partidos').innerHTML = '<div class="cargando">Cargando jornada ' + n + '…</div>';
+    if (!callado) {
+      $('partidos').innerHTML = '<div class="cargando">Cargando jornada ' + n + '…</div>';
+    }
 
     api('/api/semana?n=' + n).then(function (datos) {
       datosSemana = datos;
@@ -341,7 +352,27 @@
       pintarAvisos();
       pintarRenglones();
       latir();
+      seguirEnVivo(n, datos.refrescar);
     }).catch(function (e) { brindis(e.message, 'mal'); });
+  }
+
+  /**
+   * Mientras haya un partido corriendo, la jornada se vuelve a pedir sola cada
+   * medio minuto para que el marcador se mueva sin que nadie recargue. En
+   * cuanto no queda nada en vivo, el servidor manda refrescar = 0 y esto se
+   * apaga: no tiene caso estar pidiendo datos un miercoles.
+   */
+  function seguirEnVivo(n, cada) {
+    if (envivo) { clearTimeout(envivo); envivo = null; }
+    if (!cada) return;
+    envivo = setTimeout(function () {
+      // Si el jugador se cambio de jornada o de pestaña, ya no aplica.
+      if (semanaActual !== n || $('vista-partidos').hidden) return;
+      // Sin cupon abierto: refrescar mientras alguien esta eligiendo le
+      // borraria lo que lleva sin firmar.
+      if (pendientes().length) { seguirEnVivo(n, cada); return; }
+      abrirSemana(n, true);
+    }, cada);
   }
 
   function pintarCabecera() {
@@ -472,11 +503,18 @@
 
   function ladoEquipo(p, cual) {
     var e = p[cual];
-    var m = p.resultado ? p.resultado[cual] : null;
+    // El marcador sale del resultado final si ya lo hay; si no, del vivo. Si
+    // el partido no ha empezado no se enseña nada, ni un 0-0.
+    var m = p.resultado ? p.resultado[cual] : (p.vivo ? p.vivo[cual] : null);
     var clase = '';
     if (p.resultado) {
       clase = p.resultado.ganador === cual ? ' gano'
             : (p.resultado.ganador === 'empate' ? '' : ' perdio');
+    } else if (p.vivo) {
+      // Mientras corre, se resalta al que va arriba, sin marcar perdedor:
+      // todavia puede voltearse.
+      var otro = cual === 'local' ? 'visitante' : 'local';
+      if (p.vivo[cual] > p.vivo[otro]) clase = ' gano';
     }
     // El de casa lleva una marca chiquita. Quien no distingue local de
     // visitante ya no la necesita para elegir, pero al que le interesa ahi esta.
@@ -495,14 +533,39 @@
     if (!p.editable) clases.push('bloqueado');
     if (p.pick && p.pick.confirmado) clases.push('firmado');
     if (p.ganados > 0) clases.push('acierto');
+    // Un partido que ya acabo se apaga: lo que importa esta mas arriba.
+    if (p.resultado) clases.push('terminado');
+    if (p.vivo) clases.push('corriendo');
+
+    // El sello de "en vivo": punto rojo latiendo despacio y, debajo, el cuarto
+    // y el reloj que manda ESPN. En dos renglones porque juntos no caben en la
+    // columna, y apretarlos los encimaba con el marcador.
+    var envivo = '<span class="apilado">' +
+        '<span class="sello vivo"><i class="latido"></i>En vivo</span>' +
+        (p.vivo && p.vivo.detalle ? '<em class="reloj-vivo">' + p.vivo.detalle + '</em>' : '') +
+      '</span>';
 
     var estadoCelda;
-    if (p.pick && p.pick.confirmado) {
-      estadoCelda = p.resultado
-        ? (p.ganados > 0
-            ? '<span class="sello gano">+' + p.ganados + '</span>'
-            : '<span class="sello perdio">0 pts</span>')
-        : '<span class="sello firmado">' + ico('palomita') + ' Firmado</span>';
+    if (p.resultado) {
+      // Ya termino. Primero se dice que acabo, luego cuanto se llevo.
+      estadoCelda = '<span class="sello final">Final</span>' +
+        (p.pick && p.pick.confirmado
+          ? (p.ganados > 0
+              ? ' <span class="sello gano">+' + p.ganados + '</span>'
+              : ' <span class="sello perdio">0 pts</span>')
+          : '');
+    } else if (p.vivo) {
+      // Corriendo. No hace falta repetir "firmado": el boton que eligio ya se
+      // ve marcado en el mismo renglon. Lo que si vale la pena gritar es lo
+      // contrario, que se le haya quedado sin firmar y no le vaya a contar.
+      estadoCelda = p.pick && !p.pick.confirmado
+        ? '<span class="apilado">' +
+            '<span class="sello vivo"><i class="latido"></i>En vivo</span>' +
+            '<em class="reloj-vivo aviso-rojo">sin firmar</em>' +
+          '</span>'
+        : envivo;
+    } else if (p.pick && p.pick.confirmado) {
+      estadoCelda = '<span class="sello firmado">' + ico('palomita') + ' Firmado</span>';
     } else if (!p.editable) {
       estadoCelda = '<span class="sello candado">' + ico('candado') + ' ' +
                     (MOTIVOS[p.bloqueo] || 'Cerrado') + '</span>' +
@@ -573,45 +636,51 @@
     return p.pick.eleccion === 'empate' ? p.puntosEmpate : p.puntos;
   }
 
+  /**
+   * El cupon solo existe mientras estas armando la apuesta.
+   *
+   * En cuanto firmas todo, se va: ya no hay nada que decidir ni nada que
+   * sumar, y dejarlo ahi con un "si le atinas a todo: 0" no dice nada. Lo que
+   * ya firmaste se sigue viendo en el tablero, con su palomita. Cuando se
+   * esconde, el tablero se recorre y ocupa el espacio.
+   */
   function pintarCupon() {
-    var elegidos = seleccionados();
     var porFirmar = pendientes();
+    var caja = $('columna-cupon');
+
+    if (!porFirmar.length) {
+      caja.hidden = true;
+      document.querySelector('.tablero-general').classList.add('sin-cupon');
+      $('cupon-movil').hidden = true;
+      return;
+    }
+
+    caja.hidden = false;
+    document.querySelector('.tablero-general').classList.remove('sin-cupon');
+
     var suma = porFirmar.reduce(function (t, p) { return t + puntosDelPick(p); }, 0);
 
-    var cuerpo;
-    if (!elegidos.length) {
-      cuerpo = '<div class="vacia">Todavía no eliges nada.<br>' +
-               'Pica una opción de cualquier partido y se te va juntando aquí.</div>';
-    } else {
-      cuerpo = '<div class="lista">' + elegidos.map(function (p) {
-        var firmado = p.pick.confirmado;
-        return '<div class="apunte' + (firmado ? ' firmado' : '') + '">' +
-          '<div class="cuerpo">' +
-            '<div class="juego">' + p.visitante.abbr + ' @ ' + p.local.abbr + '</div>' +
-            '<div class="eleccion">' + nombreDeEleccion(p) +
-              (firmado ? ' <span class="sello firmado" style="padding:1px 5px;font-size:10px">Firmado</span>' : '') +
-            '</div>' +
-          '</div>' +
-          '<span class="pts">' + puntosDelPick(p) + '</span>' +
-          (p.editable && !firmado
-            ? '<button class="quitar" data-quitar="' + p.id + '" title="Quitar">×</button>'
-            : '') +
-        '</div>';
-      }).join('') + '</div>';
-    }
+    var cuerpo = '<div class="lista">' + porFirmar.map(function (p) {
+      return '<div class="apunte">' +
+        '<div class="cuerpo">' +
+          '<div class="juego">' + p.visitante.abbr + ' @ ' + p.local.abbr + '</div>' +
+          '<div class="eleccion">' + nombreDeEleccion(p) + '</div>' +
+        '</div>' +
+        '<span class="pts">' + puntosDelPick(p) + '</span>' +
+        '<button class="quitar" data-quitar="' + p.id + '" title="Quitar">×</button>' +
+      '</div>';
+    }).join('') + '</div>';
 
     $('cupon').innerHTML =
       '<div class="titulo-cupon">' +
         '<h3>Mi cupón</h3>' +
-        '<span class="conteo' + (porFirmar.length ? '' : ' vacio') + '">' + porFirmar.length + '</span>' +
+        '<span class="conteo">' + porFirmar.length + '</span>' +
       '</div>' +
       cuerpo +
       '<div class="cierre">' +
         '<div class="suma"><span>Si le atinas a todo</span><b>' + suma + '</b></div>' +
-        '<button class="confirmar" id="firmar-cupon"' + (porFirmar.length ? '' : ' disabled') + '>' +
-          (porFirmar.length
-            ? 'Firmar ' + porFirmar.length + (porFirmar.length === 1 ? ' partido' : ' partidos')
-            : 'Nada por firmar') +
+        '<button class="confirmar" id="firmar-cupon">' +
+          'Firmar ' + porFirmar.length + (porFirmar.length === 1 ? ' partido' : ' partidos') +
         '</button>' +
       '</div>';
 
@@ -711,7 +780,7 @@
       $('tabla-general').innerHTML =
         '<table class="tabla"><thead><tr>' +
         '<th></th><th>Jugador</th><th class="num">Puntos</th><th class="num">Aciertos</th>' +
-        '<th class="num">Empates</th><th class="num">Jornadas</th></tr></thead><tbody>' +
+        '<th class="num">Empates</th></tr></thead><tbody>' +
         d.tabla.map(function (f) {
           return '<tr' + (f.id === estado.usuario.id ? ' class="yo"' : '') + '>' +
             '<td class="lugar">' + f.lugar + '</td>' +
@@ -719,9 +788,6 @@
             '<td class="num" style="font-size:16px">' + f.puntos + '</td>' +
             '<td class="num">' + f.aciertos + ' / ' + f.jugados + '</td>' +
             '<td class="num">' + f.empates + '</td>' +
-            '<td class="num">' + (f.semanasGanadas
-              ? '<span style="color:var(--lima)">' + f.semanasGanadas + '</span>'
-              : '<span style="color:var(--tenue)">—</span>') + '</td>' +
           '</tr>';
         }).join('') + '</tbody></table>';
 
@@ -755,7 +821,10 @@
         '<button class="encabezado" data-jornada="' + s.semana + '">' +
           '<span class="numero">' + s.semana + '</span>' +
           '<span class="quien-gano">' +
-            '<span class="etiqueta">' + (repartida ? 'Empatados en primero' : 'Ganador de la jornada') + '</span>' +
+            // Mientras falten partidos nadie ha ganado nada: va ganando.
+            '<span class="etiqueta">' + (s.completa
+              ? (repartida ? 'Empatados en primero' : 'Ganador de la jornada')
+              : (repartida ? 'Van ganando' : 'Va ganando')) + '</span>' +
             '<b>' + nombres + '</b>' +
             (repartida ? ' <span class="repartida">se reparten la semana</span>' : '') +
           '</span>' +
@@ -888,7 +957,7 @@
 
   // Al volver a la pestaña, resincronizar: pudo haber cerrado una semana.
   document.addEventListener('visibilitychange', function () {
-    if (!document.hidden && token && semanaActual) abrirSemana(semanaActual);
+    if (!document.hidden && token && semanaActual) abrirSemana(semanaActual, true);
   });
 
 })();

@@ -19,6 +19,7 @@ var api = require('./lib/api');
 var admin = require('./lib/admin');
 var configuracion = require('./lib/configuracion');
 var almacen = require('./lib/almacen');
+var vivo = require('./lib/vivo');
 var reloj = require('./lib/reloj');
 
 var PUBLICO = path.join(__dirname, 'publico');
@@ -210,6 +211,43 @@ var servidor = http.createServer(async function (req, res) {
   }
 });
 
+/**
+ * El vigilante de los partidos.
+ *
+ * Cada medio minuto se asoma a ver si hay algo corriendo y, si ESPN ya dio un
+ * partido por terminado, guarda su marcador. Asi los puntos entran solos
+ * aunque nadie tenga el tablero abierto: no dependen de que alguien pase por
+ * la pagina ni de que el administrador se acuerde de picar un boton.
+ *
+ * Cuando no hay futbol —o sea, casi toda la semana— esto no consulta nada: la
+ * primera revision es local y sale por la puerta de atras enseguida.
+ */
+function vigilarPartidos() {
+  var trabajando = false;
+
+  async function revisar() {
+    if (trabajando) return;           // la vuelta anterior todavia no acaba
+    trabajando = true;
+    try {
+      var calendario = almacen.calendario();
+      var semanas = vivo.semanasEnJuego(calendario, almacen.resultados());
+      for (var i = 0; i < semanas.length; i++) {
+        await api.alDia(calendario, semanas[i]);
+      }
+    } catch (e) {
+      // Que ESPN falle no puede tumbar al servidor. Se reintenta al rato.
+      console.error('  (no se pudo revisar el marcador en vivo: ' + e.message + ')');
+    } finally {
+      trabajando = false;
+    }
+  }
+
+  revisar();
+  var latido = setInterval(revisar, vivo.CADA);
+  // No mantiene vivo al proceso: si no hay nada mas que hacer, que se apague.
+  if (latido.unref) latido.unref();
+}
+
 // Se lee la configuracion antes de escuchar: asi la contrasena del panel
 // aparece en la consola arriba de la direccion.
 var config = configuracion.cargar();
@@ -237,6 +275,7 @@ try {
                 ', del 2o en adelante ' + config.puntosArranque + ', ' + (config.puntosArranque + 1) +
                 ', ' + (config.puntosArranque + 2) + '… · empate x' + config.multiplicadorEmpate);
     console.log('\n  Ctrl+C para detener.\n');
+    vigilarPartidos();
   });
 } catch (e) {
   console.error('\n  No encuentro datos/calendario.json.');
