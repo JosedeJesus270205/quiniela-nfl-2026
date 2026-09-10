@@ -776,13 +776,56 @@ main .aviso, .caja .aviso { border: 1px solid var(--linea); border-radius: var(-
 /* El renglon de un partido corriendo: una linea roja a la izquierda. */
 .renglon.corriendo { box-shadow: inset 3px 0 0 var(--rojo); background: rgba(255, 77, 94, .035); }
 
-/* YA TERMINO: se apaga. Las opciones ya no sirven de nada, asi que se van
-   al fondo; el marcador y lo que se gano se quedan legibles. */
-.sello.final { background: var(--panel3); color: var(--suave); }
-.renglon.terminado .opcion { opacity: .3; }
+/* YA TERMINO: se marca fuerte, para reconocerlo de un vistazo bajando la
+   lista sin leer nada. Tres señales a la vez:
+
+     1. Un sello FINAL blanco sobre negro. Antes era gris sobre gris oscuro y
+        se perdia en el renglon; ahora es lo mas claro de toda la pantalla.
+     2. Una barra a la izquierda, como la roja del que esta corriendo. El ojo
+        aprende rapido: roja = ahorita, blanca = ya fue, nada = falta.
+     3. El renglon entero se aplana y las opciones se apagan casi del todo:
+        ya no hay nada que elegir ahi.
+
+   Si le atino, todo eso se pinta de lima: el premio manda sobre el luto. */
+.sello.final {
+  background: var(--texto); color: var(--fondo);
+  font-weight: 800; letter-spacing: .16em; padding: 4px 9px;
+}
+/* Un partido cerrado por reloj se apaga entero (.bloqueado, 55%). Pero uno que
+   ya termino, o que esta corriendo, NO: son los dos renglones que mas importan
+   de la jornada. Se les devuelve el color completo y se apaga a mano nada mas
+   lo que sobra —las opciones muertas y la hora—, para que el sello si se vea.
+   Sin esto, el FINAL blanco salia gris y el lima salia verde olivo. */
+.renglon.terminado, .renglon.corriendo { opacity: 1; }
+
+.renglon.terminado {
+  background: linear-gradient(90deg, rgba(255, 255, 255, .05), transparent 55%);
+  box-shadow: inset 3px 0 0 var(--suave);
+}
+.renglon.terminado:hover { background: linear-gradient(90deg, rgba(255, 255, 255, .07), transparent 55%); }
+.renglon.terminado .opcion { opacity: .25; }
+/* La que eligio se queda algo mas visible: es lo unico que le interesa ahi. */
+.renglon.terminado .opcion[aria-pressed="true"] { opacity: .6; }
+/* Corriendo: las que no eligio se hunden, la suya se queda encendida. */
+.renglon.corriendo .opcion:not([aria-pressed="true"]) { opacity: .45; }
 .renglon.terminado .cuando { opacity: .45; }
-.renglon.terminado .encasa { opacity: .5; }
-.renglon.terminado { background: transparent; }
+.renglon.terminado .encasa { opacity: .45; }
+
+/* Le atino: la franja y el sello se van a lima. */
+.renglon.terminado.acierto {
+  background: linear-gradient(90deg, rgba(216, 242, 74, .17), transparent 55%);
+  box-shadow: inset 3px 0 0 var(--lima);
+}
+.renglon.terminado.acierto .sello.final { background: var(--lima); color: var(--lima-tinta); }
+
+/* El que perdio el partido se hunde mas, y el ganador se lee de golpe. */
+.renglon.terminado .perdio { opacity: .32; }
+.renglon.terminado .gano .nombre { font-weight: 700; }
+.renglon.terminado .gano .marcador { font-size: 17px; }
+
+/* El "0 pts" tiene que leerse: sobre el renglon aclarado, un rojo al 12% se
+   perdia. */
+.renglon.terminado .sello.perdio { background: rgba(255, 77, 94, .22); }
 
 /* La celda de estado en dos renglones: el sello arriba, el detalle abajo.
    "EN VIVO 3o · 15:00" en una sola linea pide 152px y la columna da 96. */
