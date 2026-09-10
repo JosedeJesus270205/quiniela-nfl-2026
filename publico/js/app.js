@@ -547,13 +547,16 @@
 
     var estadoCelda;
     if (p.resultado) {
-      // Ya termino. Primero se dice que acabo, luego cuanto se llevo.
-      estadoCelda = '<span class="sello final">Final</span>' +
+      // Ya termino: el sello de tinta arriba y, debajo, lo que se llevo.
+      // Apilados porque "FINALIZADO" solo ya se come la columna entera.
+      estadoCelda = '<span class="apilado">' +
+        '<span class="sello final">Finalizado</span>' +
         (p.pick && p.pick.confirmado
           ? (p.ganados > 0
-              ? ' <span class="sello gano">+' + p.ganados + '</span>'
-              : ' <span class="sello perdio">0 pts</span>')
-          : '');
+              ? '<span class="sello gano">+' + p.ganados + '</span>'
+              : '<span class="sello perdio">0 pts</span>')
+          : '') +
+      '</span>';
     } else if (p.vivo) {
       // Corriendo. No hace falta repetir "firmado": el boton que eligio ya se
       // ve marcado en el mismo renglon. Lo que si vale la pena gritar es lo
