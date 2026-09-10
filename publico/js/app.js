@@ -711,7 +711,7 @@
       $('tabla-general').innerHTML =
         '<table class="tabla"><thead><tr>' +
         '<th></th><th>Jugador</th><th class="num">Puntos</th><th class="num">Aciertos</th>' +
-        '<th class="num">Empates</th><th class="num">Jornadas</th><th>Pagos</th></tr></thead><tbody>' +
+        '<th class="num">Empates</th><th class="num">Jornadas</th></tr></thead><tbody>' +
         d.tabla.map(function (f) {
           return '<tr' + (f.id === estado.usuario.id ? ' class="yo"' : '') + '>' +
             '<td class="lugar">' + f.lugar + '</td>' +
@@ -722,8 +722,6 @@
             '<td class="num">' + (f.semanasGanadas
               ? '<span style="color:var(--lima)">' + f.semanasGanadas + '</span>'
               : '<span style="color:var(--tenue)">—</span>') + '</td>' +
-            '<td><span class="pastilla ' + (f.alCorriente ? 'ok' : 'debe') + '">' +
-              pesos(f.pagado) + '</span></td>' +
           '</tr>';
         }).join('') + '</tbody></table>';
 
