@@ -150,10 +150,28 @@
   <section class="vista" id="vista-tabla" hidden>
    <div class="envoltura">
     <div class="titulo-vista">
-      <h2>Tabla general</h2>
+      <h2>Tabla</h2>
       <span class="etiqueta" id="tabla-actualizada"></span>
     </div>
-    <div class="caja"><div id="tabla-general" class="cargando">Cargando…</div></div>
+
+    <!-- Dos premios, dos competencias, dos ordenes: por eso son dos tablas. -->
+    <div class="pestanas pestanas-tabla" role="tablist">
+      <button role="tab" aria-selected="true" data-tabla="semana">
+        Semana <small>premio semanal</small>
+      </button>
+      <button role="tab" aria-selected="false" data-tabla="temporada">
+        Temporada <small>premio gordo</small>
+      </button>
+    </div>
+
+    <div id="panel-semana">
+      <div class="selector-semanas" id="selector-semanas"></div>
+      <div class="caja"><div id="tabla-semana" class="cargando">Cargando…</div></div>
+    </div>
+
+    <div id="panel-temporada" hidden>
+      <div class="caja"><div id="tabla-general" class="cargando">Cargando…</div></div>
+    </div>
 
     <div class="titulo-vista" style="margin-top:28px">
       <h2>Ganadores por jornada</h2>

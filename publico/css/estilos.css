@@ -853,3 +853,69 @@ main .aviso, .caja .aviso { border: 1px solid var(--linea); border-radius: var(-
   white-space: nowrap;
 }
 .reloj-vivo.aviso-rojo { color: var(--rojo); text-transform: uppercase; font-weight: 700; }
+
+/* ------------------------------------------------ tabla: dos premios --- */
+
+/* Semana y Temporada son dos competencias con dos ordenes distintos: el que
+   gana la semana puede ir en el lugar 12 de la temporada. Por eso dos tablas. */
+.pestanas-tabla { max-width: 460px; margin: 4px 0 14px; }
+.pestanas-tabla button {
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  padding: 8px 10px; font-size: 14px;
+}
+.pestanas-tabla button small {
+  font-family: var(--dato); font-size: 10.5px; letter-spacing: .08em;
+  text-transform: uppercase; opacity: .7; font-weight: 600;
+}
+
+.selector-semanas { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.selector-semanas button {
+  position: relative; min-width: 38px; padding: 6px 9px; border-radius: 7px;
+  border: 1px solid var(--linea2); background: var(--panel); color: var(--suave);
+  font-family: var(--dato); font-weight: 700; font-size: 15px; cursor: pointer;
+}
+.selector-semanas button[aria-pressed="true"] {
+  background: var(--lima); border-color: var(--lima); color: var(--lima-tinta);
+}
+/* Punto rojo: esa semana todavia se esta jugando. */
+.selector-semanas .punto-abierta {
+  position: absolute; top: 3px; right: 3px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--rojo);
+}
+
+.cabeza-semana {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 10px; flex-wrap: wrap;
+  padding: 12px 10px; border-bottom: 1px solid var(--linea);
+}
+.cabeza-semana b { font-size: 16px; }
+.cabeza-semana .abierta, .cabeza-semana .cerrada {
+  margin-left: 10px; font-family: var(--dato); font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.cabeza-semana .abierta { color: var(--ambar); }
+.cabeza-semana .cerrada { color: var(--verde); }
+.cabeza-semana .quien { color: var(--suave); font-size: 13.5px; }
+.cabeza-semana .quien b { color: var(--lima); font-size: 13.5px; }
+
+/* El que va arriba de cada competencia lleva trofeo en lugar del numero. */
+.tabla tr.lider td { font-weight: 700; }
+.tabla tr.lider .lugar { color: var(--lima); }
+.tabla tr.lider .lugar .ico { width: 17px; height: 17px; vertical-align: -3px; }
+.tabla .num.secundaria { color: var(--suave); font-weight: 600; }
+
+/* En el telefono no caben cinco columnas: los empates se van (ya cuentan dentro
+   de los puntos) y la tabla gana ancho para que el nombre no se parta en tres
+   renglones. Si aun asi no cupiera, que se deslice dentro de su caja en vez de
+   cortarse. */
+#tabla-semana, #tabla-general { overflow-x: auto; }
+@media (max-width: 560px) {
+  .tabla .opcional { display: none; }
+  #tabla-semana .tabla td, #tabla-semana .tabla th,
+  #tabla-general .tabla td, #tabla-general .tabla th { padding: 9px 6px; }
+  .tabla .lugar { width: 26px; }
+  .cabeza-semana .quien { width: 100%; }
+}
+
+/* "SEM 3" no se parte en dos renglones. */
+#tabla-semana .tabla th, #tabla-general .tabla th { white-space: nowrap; }

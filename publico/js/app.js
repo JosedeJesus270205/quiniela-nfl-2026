@@ -765,66 +765,183 @@
 
   // ================================================================= TABLA ==
 
+  // Lo que se trajo la ultima vez, y que semana y que pestaña se estan viendo.
+  var datosTabla = null;
+  var semanaTabla = null;
+  var pestanaTabla = 'semana';
+
   function cargarTabla() {
     $('tabla-general').className = 'cargando';
     $('tabla-general').textContent = 'Cargando…';
 
     api('/api/tabla').then(function (d) {
+      datosTabla = d;
       $('tabla-actualizada').textContent = d.actualizado
         ? 'Resultados al ' + cuando(d.actualizado)
         : 'Aún no se cargan resultados';
 
-      if (!d.tabla.length) {
-        $('tabla-general').innerHTML = '<div class="cargando">Todavía no hay jugadores.</div>';
-        return;
-      }
+      // Abre en la jornada mas reciente que ya tenga partidos jugados. Las
+      // semanas vienen de la mas nueva a la mas vieja.
+      var existe = d.semanas.some(function (s) { return s.semana === semanaTabla; });
+      if (!existe) semanaTabla = d.semanas.length ? d.semanas[0].semana : null;
 
-      $('tabla-general').className = '';
-      $('tabla-general').innerHTML =
-        '<table class="tabla"><thead><tr>' +
-        '<th></th><th>Jugador</th><th class="num">Puntos</th><th class="num">Aciertos</th>' +
-        '<th class="num">Empates</th></tr></thead><tbody>' +
-        d.tabla.map(function (f) {
-          return '<tr' + (f.id === estado.usuario.id ? ' class="yo"' : '') + '>' +
-            '<td class="lugar">' + f.lugar + '</td>' +
-            '<td>' + f.nombre + '</td>' +
-            '<td class="num" style="font-size:16px">' + f.puntos + '</td>' +
-            '<td class="num">' + f.aciertos + ' / ' + f.jugados + '</td>' +
-            '<td class="num">' + f.empates + '</td>' +
-          '</tr>';
-        }).join('') + '</tbody></table>';
-
+      pintarTablaSemana();
+      pintarTablaTemporada();
       pintarJornadas(d.semanas);
+      mostrarPestanaTabla(pestanaTabla);
     }).catch(function (e) { brindis(e.message, 'mal'); });
   }
 
+  function mostrarPestanaTabla(cual) {
+    pestanaTabla = cual;
+    document.querySelectorAll('[data-tabla]').forEach(function (b) {
+      b.setAttribute('aria-selected', String(b.dataset.tabla === cual));
+    });
+    $('panel-semana').hidden = cual !== 'semana';
+    $('panel-temporada').hidden = cual !== 'temporada';
+  }
+
+  document.querySelectorAll('[data-tabla]').forEach(function (b) {
+    b.addEventListener('click', function () { mostrarPestanaTabla(b.dataset.tabla); });
+  });
+
+  /** Una fila: lugar (o trofeo si va primero), nombre y las celdas que se pasen. */
+  function filaTabla(f, celdas, primero) {
+    var clases = [];
+    if (f.id === estado.usuario.id) clases.push('yo');
+    if (primero) clases.push('lider');
+    return '<tr' + (clases.length ? ' class="' + clases.join(' ') + '"' : '') + '>' +
+      '<td class="lugar">' + (primero ? ico('trofeo') : f.lugar) + '</td>' +
+      '<td>' + f.nombre + '</td>' + celdas + '</tr>';
+  }
+
   /**
-   * Quien gano cada jornada. Se pintan de la mas reciente hacia atras, y cada
-   * una se abre para ver la tabla de esa semana sola.
+   * La tabla de UNA semana: la del premio semanal. Solo cuentan los partidos
+   * de esa jornada, de jueves a martes.
+   */
+  function pintarTablaSemana() {
+    var d = datosTabla;
+
+    if (!d.semanas.length) {
+      $('selector-semanas').innerHTML = '';
+      $('tabla-semana').className = 'cargando';
+      $('tabla-semana').textContent = 'Todavía no se juega ningún partido.';
+      return;
+    }
+
+    // Selector: solo las semanas que ya tienen algo jugado, en orden.
+    var orden = d.semanas.slice().sort(function (a, b) { return a.semana - b.semana; });
+    $('selector-semanas').innerHTML = orden.map(function (s) {
+      return '<button data-ver-semana="' + s.semana + '"' +
+        (s.semana === semanaTabla ? ' aria-pressed="true"' : '') +
+        (s.completa ? '' : ' title="En curso"') + '>' +
+        s.semana + (s.completa ? '' : '<i class="punto-abierta"></i>') +
+        '</button>';
+    }).join('');
+    $('selector-semanas').querySelectorAll('[data-ver-semana]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        semanaTabla = Number(b.dataset.verSemana);
+        pintarTablaSemana();
+      });
+    });
+
+    var s = d.semanas.find(function (x) { return x.semana === semanaTabla; });
+    var repartida = s.ganadores.length > 1;
+    var estadoSemana = s.completa
+      ? (repartida ? 'Empatados en primero' : 'Ganó la semana')
+      : (repartida ? 'Van ganando' : 'Va ganando');
+
+    var cabeza =
+      '<div class="cabeza-semana">' +
+        '<div><b>Semana ' + s.semana + '</b>' +
+          '<span class="' + (s.completa ? 'cerrada' : 'abierta') + '">' +
+            (s.completa ? 'Terminada' : s.terminados + ' de ' + s.partidos + ' partidos jugados') +
+          '</span></div>' +
+        (s.ganadores.length
+          ? '<div class="quien">' + estadoSemana + ': <b>' +
+              s.ganadores.map(function (g) { return g.nombre; }).join(' · ') + '</b></div>'
+          : '') +
+      '</div>';
+
+    $('tabla-semana').className = '';
+    if (!s.tabla.length) {
+      $('tabla-semana').innerHTML = cabeza +
+        '<div class="cargando">Nadie firmó partidos de esta semana.</div>';
+      return;
+    }
+
+    var mejor = s.tabla[0].puntos;
+    $('tabla-semana').innerHTML = cabeza +
+      '<table class="tabla"><thead><tr><th></th><th>Jugador</th>' +
+      '<th class="num">Puntos</th><th class="num">Aciertos</th><th class="num opcional">Empates</th>' +
+      '</tr></thead><tbody>' +
+      s.tabla.map(function (f) {
+        return filaTabla(f,
+          '<td class="num" style="font-size:16px">' + f.puntos + '</td>' +
+          '<td class="num">' + f.aciertos + ' / ' + f.jugados + '</td>' +
+          '<td class="num opcional">' + f.empates + '</td>',
+          mejor > 0 && f.puntos === mejor);
+      }).join('') + '</tbody></table>';
+  }
+
+  /**
+   * La tabla de la temporada: la del premio gordo. Lleva al lado los puntos de
+   * la jornada mas reciente, como referencia; el orden es por el total.
+   */
+  function pintarTablaTemporada() {
+    var d = datosTabla;
+    if (!d.tabla.length) {
+      $('tabla-general').className = 'cargando';
+      $('tabla-general').textContent = 'Todavía no hay jugadores.';
+      return;
+    }
+
+    var actual = d.semanas[0] || null;
+    var deLaSemana = {};
+    if (actual) actual.tabla.forEach(function (f) { deLaSemana[f.id] = f.puntos; });
+
+    var mejor = d.tabla[0].puntos;
+    $('tabla-general').className = '';
+    $('tabla-general').innerHTML =
+      '<table class="tabla"><thead><tr><th></th><th>Jugador</th>' +
+      '<th class="num">Total</th>' +
+      (actual ? '<th class="num">Sem ' + actual.semana + '</th>' : '') +
+      '<th class="num">Aciertos</th><th class="num opcional">Empates</th>' +
+      '</tr></thead><tbody>' +
+      d.tabla.map(function (f) {
+        return filaTabla(f,
+          '<td class="num" style="font-size:16px">' + f.puntos + '</td>' +
+          (actual ? '<td class="num secundaria">' + (deLaSemana[f.id] || 0) + '</td>' : '') +
+          '<td class="num">' + f.aciertos + ' / ' + f.jugados + '</td>' +
+          '<td class="num opcional">' + f.empates + '</td>',
+          mejor > 0 && f.puntos === mejor);
+      }).join('') + '</tbody></table>';
+  }
+
+  /**
+   * El historial: quien gano cada jornada, de la mas reciente hacia atras.
+   * Picar una la abre en la pestaña Semana.
    */
   function pintarJornadas(semanas) {
     var caja = $('ganadores-semana');
     if (!semanas || !semanas.length) {
       caja.innerHTML = '<div class="aviso azul"><span class="icono">' + ico('trofeo') + '</span>' +
-        '<div><b class="titulo">Todavía no hay jornadas terminadas</b>' +
-        'En cuanto se jueguen los primeros partidos y se carguen los marcadores, ' +
-        'aquí aparece el ganador de cada semana.</div></div>';
+        '<div><b class="titulo">Todavía no hay jornadas jugadas</b>' +
+        'En cuanto se jueguen los primeros partidos, aquí aparece quién gana cada semana.</div></div>';
       return;
     }
 
     caja.innerHTML = semanas.map(function (s) {
       var gane = s.ganadores.some(function (g) { return g.id === estado.usuario.id; });
       var repartida = s.ganadores.length > 1;
-
       var nombres = s.ganadores.length
         ? s.ganadores.map(function (g) { return g.nombre; }).join(' · ')
         : 'Nadie sumó puntos';
 
-      return '<article class="jornada' + (gane ? ' gane' : '') + '" data-abierta="false">' +
+      return '<article class="jornada' + (gane ? ' gane' : '') + '">' +
         '<button class="encabezado" data-jornada="' + s.semana + '">' +
           '<span class="numero">' + s.semana + '</span>' +
           '<span class="quien-gano">' +
-            // Mientras falten partidos nadie ha ganado nada: va ganando.
             '<span class="etiqueta">' + (s.completa
               ? (repartida ? 'Empatados en primero' : 'Ganador de la jornada')
               : (repartida ? 'Van ganando' : 'Va ganando')) + '</span>' +
@@ -837,26 +954,15 @@
             '<span class="flecha">▶</span>' +
           '</span>' +
         '</button>' +
-        '<div class="detalle" hidden>' +
-          '<table class="tabla"><thead><tr><th></th><th>Jugador</th>' +
-          '<th class="num">Puntos</th><th class="num">Aciertos</th></tr></thead><tbody>' +
-          s.tabla.map(function (f) {
-            return '<tr' + (f.id === estado.usuario.id ? ' class="yo"' : '') + '>' +
-              '<td class="lugar">' + f.lugar + '</td><td>' + f.nombre + '</td>' +
-              '<td class="num" style="font-size:16px">' + f.puntos + '</td>' +
-              '<td class="num">' + f.aciertos + ' / ' + f.jugados + '</td></tr>';
-          }).join('') +
-          '</tbody></table>' +
-        '</div>' +
       '</article>';
     }).join('');
 
     caja.querySelectorAll('[data-jornada]').forEach(function (b) {
       b.addEventListener('click', function () {
-        var art = b.parentElement;
-        var abierta = art.dataset.abierta === 'true';
-        art.dataset.abierta = String(!abierta);
-        art.querySelector('.detalle').hidden = abierta;
+        semanaTabla = Number(b.dataset.jornada);
+        pintarTablaSemana();
+        mostrarPestanaTabla('semana');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   }
