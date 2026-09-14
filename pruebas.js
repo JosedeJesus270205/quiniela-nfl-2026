@@ -528,19 +528,91 @@ test('semanasEnJuego solo trae semanas con algo pendiente', function () {
     Date.now = function () { return LUNES + 12 * 60 * MIN; };
     var todos = { partidos: {} };
     CAL.partidos.forEach(function (p) {
-      todos.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17 };
+      todos.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17,
+                               tiempoNormal: { local: 20, visitante: 17 } };
     });
     assert.deepStrictEqual(vivo.semanasEnJuego(CAL, todos), [],
       'ya contados todos, no hay por que seguir preguntando');
 
+    // Guardados como finales pero sin el marcador del minuto 60 (de antes de
+    // la regla): la semana se vuelve a vigilar para completarlos.
+    var viejos = { partidos: {} };
+    CAL.partidos.forEach(function (p) {
+      viejos.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17 };
+    });
+    assert.deepStrictEqual(vivo.semanasEnJuego(CAL, viejos), [1],
+      'sin minuto 60 guardado, hay que ir por el');
+
     // Pero si falta uno por cerrar, esa semana si se vigila.
     var falta = { partidos: {} };
     CAL.partidos.slice(1).forEach(function (p) {
-      falta.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17 };
+      falta.partidos[p.id] = { final: true, marcadorLocal: 20, marcadorVisitante: 17,
+                               tiempoNormal: { local: 20, visitante: 17 } };
     });
     assert.deepStrictEqual(vivo.semanasEnJuego(CAL, falta), [1],
       'con un partido sin marcador, la semana sigue en la lista');
   } finally {
     Date.now = real;
   }
+});
+
+// ---------------------------------------------------------------------------
+// Empate: cuenta el tiempo normal, no la prorroga
+// ---------------------------------------------------------------------------
+
+test('empatados al minuto 60 es empate aunque alguien gane en prorroga', function () {
+  var tabla = reglas.tablaDePuntos(CAL, {});
+  // El caso real de NO @ DET, semana 1 de 2026: 24-24 al 60, 31-30 final.
+  var res = {
+    final: true, marcadorLocal: 31, marcadorVisitante: 30,
+    tiempoNormal: { local: 24, visitante: 24 }, prorroga: true
+  };
+  assert.strictEqual(reglas.ganadorDeResultado(res), 'empate');
+  assert.ok(reglas.puntosGanados({ eleccion: 'empate', confirmado: true }, 'tnf', res, tabla) > 0,
+    'el que le fue al empate cobra');
+  assert.strictEqual(reglas.puntosGanados({ eleccion: 'local', confirmado: true }, 'tnf', res, tabla), 0,
+    'el que le fue al que gano en prorroga no cobra');
+});
+
+test('sin prorroga el tiempo normal y el final dan lo mismo', function () {
+  var res = { final: true, marcadorLocal: 20, marcadorVisitante: 17,
+              tiempoNormal: { local: 20, visitante: 17 }, prorroga: false };
+  assert.strictEqual(reglas.ganadorDeResultado(res), 'local');
+});
+
+test('un resultado viejo sin minuto 60 se cuenta con el final', function () {
+  var res = { final: true, marcadorLocal: 13, marcadorVisitante: 10 };
+  assert.strictEqual(reglas.ganadorDeResultado(res), 'local');
+});
+
+test('del marcador de ESPN se saca el minuto 60 sumando cuatro cuartos', function () {
+  var ls = function (a) { return a.map(function (v) { return { value: v }; }); };
+  var casa = { score: '31', linescores: ls([7, 7, 3, 7, 7]) };
+  var fuera = { score: '30', linescores: ls([10, 7, 0, 7, 6]) };
+  var n = vivo.tiempoNormal(casa, fuera, { shortDetail: 'Final/OT' }, 5);
+  assert.deepStrictEqual(n, { local: 24, visitante: 24, prorroga: true });
+
+  // Con prorroga y sin cuartos no se puede saber: no se inventa.
+  assert.strictEqual(vivo.tiempoNormal({ score: '31' }, { score: '30' }, { shortDetail: 'Final/OT' }, 5), null);
+
+  // Sin prorroga y sin cuartos, el final es el minuto 60.
+  assert.deepStrictEqual(vivo.tiempoNormal({ score: '20' }, { score: '17' }, { shortDetail: 'Final' }, 4),
+    { local: 20, visitante: 17, prorroga: false });
+});
+
+test('la semana 1 se cuenta con el final: la regla del minuto 60 empieza en la 2', function () {
+  assert.strictEqual(reglas.cuentaDeSemana(1), 'final');
+  assert.strictEqual(reglas.cuentaDeSemana(2), 'normal');
+  assert.strictEqual(reglas.cuentaDeSemana(18), 'normal');
+
+  // NO @ DET de la semana 1: 24-24 al 60, 31-30 final. Guardado con
+  // cuenta 'final', lo sigue ganando Detroit, como se conto.
+  var semana1 = { final: true, marcadorLocal: 31, marcadorVisitante: 30,
+                  tiempoNormal: { local: 24, visitante: 24 }, prorroga: true, cuenta: 'final' };
+  assert.strictEqual(reglas.ganadorDeResultado(semana1), 'local');
+
+  // El mismo marcador en la semana 2 ya es empate.
+  var semana2 = { final: true, marcadorLocal: 31, marcadorVisitante: 30,
+                  tiempoNormal: { local: 24, visitante: 24 }, prorroga: true, cuenta: 'normal' };
+  assert.strictEqual(reglas.ganadorDeResultado(semana2), 'empate');
 });

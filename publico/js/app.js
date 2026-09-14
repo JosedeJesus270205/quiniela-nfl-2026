@@ -556,6 +556,11 @@
               ? '<span class="sello gano">+' + p.ganados + '</span>'
               : '<span class="sello perdio">0 pts</span>')
           : '') +
+        // Se fue a prorroga: se avisa con que marcador se conto.
+        (p.resultado.prorroga && p.resultado.normal
+          ? '<em class="reloj-vivo prorroga">Al min 60: ' +
+              p.resultado.normal.visitante + '-' + p.resultado.normal.local + '</em>'
+          : '') +
       '</span>';
     } else if (p.vivo) {
       // Corriendo. No hace falta repetir "firmado": el boton que eligio ya se

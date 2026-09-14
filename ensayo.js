@@ -265,7 +265,9 @@ semanas.forEach(function (n) {
     if (termino) {
       var m = marcadorDe(p);
       resultados.partidos[p.id] = {
-        final: true, marcadorLocal: m[0], marcadorVisitante: m[1], detalle: 'Final'
+        final: true, marcadorLocal: m[0], marcadorVisitante: m[1],
+        tiempoNormal: { local: m[0], visitante: m[1] }, prorroga: false,
+        cuenta: require('./lib/reglas').cuentaDeSemana(n), detalle: 'Final'
       };
       jugados++;
     }
