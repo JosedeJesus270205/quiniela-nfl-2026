@@ -616,3 +616,28 @@ test('la semana 1 se cuenta con el final: la regla del minuto 60 empieza en la 2
                   tiempoNormal: { local: 24, visitante: 24 }, prorroga: true, cuenta: 'normal' };
   assert.strictEqual(reglas.ganadorDeResultado(semana2), 'empate');
 });
+
+// ---------------------------------------------------------------------------
+// Record de los equipos
+// ---------------------------------------------------------------------------
+
+test('el record sale del marcador final, prorroga incluida', function () {
+  // En el calendario de prueba los tres partidos son NE @ SEA.
+  var res = { partidos: {
+    tnf: { final: true, marcadorLocal: 24, marcadorVisitante: 17 },            // gana SEA
+    dom: { final: true, marcadorLocal: 30, marcadorVisitante: 31,              // gana NE en prorroga
+           tiempoNormal: { local: 24, visitante: 24 }, prorroga: true },
+    mnf: { final: true, marcadorLocal: 20, marcadorVisitante: 20 }             // empate
+  } };
+  var r = reglas.records(CAL, res);
+  assert.deepStrictEqual(r.SEA, { g: 1, p: 1, e: 1 }, 'la prorroga cuenta para el record');
+  assert.deepStrictEqual(r.NE, { g: 1, p: 1, e: 1 });
+  assert.strictEqual(reglas.textoRecord(r.SEA), '1-1-1');
+  assert.strictEqual(reglas.textoRecord({ g: 3, p: 1, e: 0 }), '3-1', 'sin empates no se escribe el tercero');
+});
+
+test('sin partidos jugados el record es 0-0', function () {
+  var r = reglas.records(CAL, { partidos: {} });
+  assert.strictEqual(reglas.textoRecord(r.SEA), '0-0');
+  assert.strictEqual(reglas.textoRecord(undefined), '0-0');
+});

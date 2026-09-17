@@ -922,3 +922,13 @@ main .aviso, .caja .aviso { border: 1px solid var(--linea); border-radius: var(-
 
 /* "Al min 60: 24-24": el partido se fue a prorroga y se conto el tiempo normal. */
 .reloj-vivo.prorroga { color: var(--ambar); font-weight: 700; }
+
+/* El record junto al nombre: "2-1". Chico, para que no le robe el ojo al
+   nombre ni al marcador, pero legible. */
+.enfrentamiento .record {
+  flex: 0 0 auto;
+  font-family: var(--dato); font-weight: 600; font-size: 12.5px;
+  letter-spacing: .03em; color: var(--suave);
+  font-variant-numeric: tabular-nums;
+}
+.renglon.terminado .perdio .record { opacity: .8; }

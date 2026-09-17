@@ -521,9 +521,13 @@
     var casa = cual === 'local' && !p.neutral
       ? '<span class="encasa" title="Juega en su casa">casa</span>' : '';
 
+    // Record de la temporada al dia: ganados-perdidos(-empatados).
+    var record = p.record && p.record[cual]
+      ? '<span class="record" title="Ganados-perdidos en la temporada">' + p.record[cual] + '</span>' : '';
+
     return '<span class="equipo-linea' + clase + '">' +
              '<img src="img/equipos/' + e.abbr + '.png" alt="" loading="lazy">' +
-             '<span class="nombre">' + e.corto + '</span>' + casa +
+             '<span class="nombre">' + e.corto + '</span>' + record + casa +
              (m !== null ? '<span class="marcador">' + m + '</span>' : '') +
            '</span>';
   }
