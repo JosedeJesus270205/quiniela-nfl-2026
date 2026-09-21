@@ -641,3 +641,22 @@ test('sin partidos jugados el record es 0-0', function () {
   assert.strictEqual(reglas.textoRecord(r.SEA), '0-0');
   assert.strictEqual(reglas.textoRecord(undefined), '0-0');
 });
+
+test('los dos partidos de la semana 2 que se acordaron por marcador final', function () {
+  var ids = Object.keys(reglas.CUENTAN_CON_FINAL);
+  assert.strictEqual(ids.length, 2, 'son exactamente dos, no mas');
+
+  // 27-27 al minuto 60, 33-30 final: con la excepcion lo gana el local.
+  var kc = { final: true, marcadorLocal: 33, marcadorVisitante: 30,
+             tiempoNormal: { local: 27, visitante: 27 }, prorroga: true, cuenta: 'normal' };
+
+  assert.strictEqual(reglas.ganadorDeResultado(kc, '401872945'), 'local',
+    'el de la excepcion cuenta con el final');
+  assert.strictEqual(reglas.ganadorDeResultado(kc, 'otro-partido'), 'empate',
+    'cualquier otro sigue contando con el minuto 60');
+  assert.strictEqual(reglas.ganadorDeResultado(kc), 'empate',
+    'sin id, la regla normal');
+
+  assert.strictEqual(reglas.cuentaDe(kc, '401872936'), 'final');
+  assert.strictEqual(reglas.cuentaDe(kc, 'otro-partido'), 'normal');
+});
