@@ -82,6 +82,7 @@ var RUTAS = {
   'GET  /api/admin/semana': admin.semana,
   'POST /api/admin/puntos': admin.fijarPuntos,
   'GET  /api/admin/picks': admin.picksDeSemana,
+  'POST /api/admin/pick-corregir': admin.corregirPick,
   'POST /api/admin/resultados': admin.actualizarResultados
 };
 

@@ -660,3 +660,25 @@ test('los dos partidos de la semana 2 que se acordaron por marcador final', func
   assert.strictEqual(reglas.cuentaDe(kc, '401872936'), 'final');
   assert.strictEqual(reglas.cuentaDe(kc, 'otro-partido'), 'normal');
 });
+
+// ---------------------------------------------------------------------------
+// Corregir un pick: la regla de oro sigue mandando
+// ---------------------------------------------------------------------------
+
+test('un pick solo se puede corregir con el partido abierto', function () {
+  var juego = CAL.partidos.find(function (p) { return p.id === 'dom'; });
+  var cierre = reglas.cierreDePartido(juego);
+
+  // Abierto: se puede.
+  assert.strictEqual(
+    reglas.estadoDePartido(CAL, juego, new Date(cierre.getTime() - 60 * 1000)),
+    'abierto', 'antes de su cierre esta abierto');
+
+  // Pasado su cierre y ya iniciado: no.
+  assert.strictEqual(
+    reglas.estadoDePartido(CAL, juego, new Date(cierre.getTime() + 60 * 1000)),
+    'cerrado', 'pasado el cierre ya no');
+  assert.strictEqual(
+    reglas.estadoDePartido(CAL, juego, new Date(Date.parse(juego.inicio) + 60 * 1000)),
+    'iniciado', 'ya empezado, menos');
+});
