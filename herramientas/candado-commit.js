@@ -31,7 +31,12 @@ var RUTAS_PROHIBIDAS = [
   { patron: /(^|\/)respaldos\//,          que: 'un respaldo de la base' },
   { patron: /^ensayo\//,                  que: 'la carpeta del modo ensayo' },
   { patron: /\.env(\.|$)/,                que: 'un archivo de variables de entorno' },
-  { patron: /\.pem$|\.key$|id_rsa/,       que: 'una llave privada' }
+  { patron: /\.pem$|\.key$|id_rsa/,       que: 'una llave privada' },
+  // Hojas de calculo y documentos. Una vez se colo un xlsx con el modelo de
+  // picks: el candado no lo vio porque solo revisaba texto, y un xlsx por
+  // dentro es un zip. Por ruta si se ve.
+  { patron: /\.(xlsx|xlsm|xls|csv|docx|doc|pptx|numbers|pages)$/i,
+    que: 'una hoja de calculo o documento (analisis, picks, listas de gente)' }
 ];
 
 // ---------------------------------------------------------------------------

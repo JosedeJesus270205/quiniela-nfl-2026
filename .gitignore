@@ -14,3 +14,11 @@ node_modules/
 *.log
 Thumbs.db
 desktop.ini
+
+# Hojas de calculo y documentos: analisis, picks, listas. Nada de esto sube
+# a un repo publico, y una de ellas ya se colo una vez.
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.docx
