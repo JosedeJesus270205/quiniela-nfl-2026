@@ -40,10 +40,11 @@ var pagos = function (total) { return total ? [{ monto: total }] : []; };
 
 // ---------------------------------------------------------------------------
 
-test('cada partido cierra 30 minutos antes del suyo, no del primero', function () {
-  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[0]).getTime(), JUEVES - 30 * MIN);
-  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[1]).getTime(), DOMINGO - 30 * MIN);
-  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[2]).getTime(), LUNES - 30 * MIN);
+test('cada partido cierra antes del suyo, no del primero de la jornada', function () {
+  var m = C.minutosCierre;
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[0]).getTime(), JUEVES - m * MIN);
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[1]).getTime(), DOMINGO - m * MIN);
+  assert.strictEqual(reglas.cierreDePartido(CAL.partidos[2]).getTime(), LUNES - m * MIN);
 });
 
 test('antes de todo, todo esta abierto', function () {
@@ -55,7 +56,7 @@ test('antes de todo, todo esta abierto', function () {
 
 test('cuando cierra el jueves, el domingo y el lunes SIGUEN abiertos', function () {
   // Este es el cambio: antes cerraba la jornada completa de un golpe.
-  var ahora = new Date(JUEVES - 30 * MIN);
+  var ahora = new Date(JUEVES - C.minutosCierre * MIN);
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[0], ahora), 'cerrado');
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[1], ahora), 'abierto');
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[2], ahora), 'abierto');
@@ -84,14 +85,14 @@ test('el proximo cierre es el del siguiente partido por jugarse', function () {
 });
 
 test('la jornada solo esta cerrada cuando cerro su ULTIMO partido', function () {
-  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(JUEVES - 30 * MIN)), false);
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(JUEVES - C.minutosCierre * MIN)), false);
   assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(DOMINGO)), false);
   assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(LUNES - 31 * MIN)), false);
-  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(LUNES - 30 * MIN)), true);
+  assert.strictEqual(reglas.semanaCerrada(CAL, 1, new Date(LUNES - C.minutosCierre * MIN)), true);
 });
 
 test('la semana siguiente no se entera de lo que pasa en esta', function () {
-  var ahora = new Date(JUEVES - 30 * MIN);
+  var ahora = new Date(JUEVES - C.minutosCierre * MIN);
   assert.strictEqual(reglas.estadoDePartido(CAL, CAL.partidos[3], ahora), 'abierto');
 });
 
@@ -115,9 +116,10 @@ test('REGLA DE ORO: ni con la temporada pagada se toca un partido iniciado', fun
   assert.strictEqual(r.motivo, 'iniciado');
 });
 
-test('en los 30 minutos previos ya no se puede, aunque no haya empezado', function () {
+test('pasado su cierre ya no se puede, aunque el partido no haya empezado', function () {
   var r = reglas.puedeElegir({
-    calendario: CAL, partido: CAL.partidos[1], ahora: new Date(DOMINGO - 29 * MIN),
+    calendario: CAL, partido: CAL.partidos[1],
+    ahora: new Date(DOMINGO - C.minutosCierre * MIN + 1),
     pagos: pagos(1500), pick: null
   });
   assert.strictEqual(r.puede, false);
@@ -319,7 +321,7 @@ test('en el calendario real, cada partido cierra antes de empezar', function () 
     var cierre = reglas.cierreDePartido(p);
     assert.ok(cierre.getTime() < Date.parse(p.inicio),
       p.visitante.abbr + '@' + p.local.abbr + ' cierra despues de empezar');
-    assert.strictEqual(Date.parse(p.inicio) - cierre.getTime(), 30 * 60 * 1000);
+    assert.strictEqual(Date.parse(p.inicio) - cierre.getTime(), C.minutosCierre * MIN);
   });
 });
 
@@ -659,4 +661,32 @@ test('los dos partidos de la semana 2 que se acordaron por marcador final', func
 
   assert.strictEqual(reglas.cuentaDe(kc, '401872936'), 'final');
   assert.strictEqual(reglas.cuentaDe(kc, 'otro-partido'), 'normal');
+});
+
+test('cambiar el cierre no toca nada mas que la hora de cierre', function () {
+  // minutosCierre se usa en un solo lugar: para calcular una fecha. No
+  // escribe nada, asi que cambiarlo no puede borrar picks ni pagos.
+  var juego = CAL.partidos[1];
+  [30, 10, 5, 1].forEach(function (m) {
+    var config = Object.assign({}, C, { minutosCierre: m });
+    assert.strictEqual(
+      reglas.cierreDePartido(juego, config).getTime(),
+      Date.parse(juego.inicio) - m * MIN,
+      'con ' + m + ' min, cierra ' + m + ' min antes');
+  });
+
+  // Y con cualquier cierre la regla de oro no se mueve: ya iniciado, jamas.
+  var config = Object.assign({}, C, { minutosCierre: 5 });
+  var r = reglas.puedeElegir({
+    calendario: CAL, partido: juego, ahora: new Date(DOMINGO + 1),
+    pagos: pagos(1500), pick: null, config: config
+  });
+  assert.strictEqual(r.motivo, 'iniciado');
+
+  // Un pick ya firmado sigue cerrado aunque el partido se reabra.
+  var abierto = reglas.puedeElegir({
+    calendario: CAL, partido: juego, ahora: new Date(DOMINGO - 20 * MIN),
+    pagos: pagos(1500), pick: { eleccion: 'local', confirmado: true }, config: config
+  });
+  assert.strictEqual(abierto.motivo, 'confirmado', 'lo firmado no se reabre');
 });

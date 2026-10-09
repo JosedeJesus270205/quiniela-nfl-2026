@@ -473,7 +473,7 @@
       avisos.push({
         clase: 'rojo', icono: 'candado',
         titulo: 'La jornada ' + d.semana + ' ya cerró',
-        texto: 'Cerró 30 minutos antes de su primer partido. Aquí solo puedes ver lo que quedó registrado.'
+        texto: 'Cada partido cerró 30 segundos antes de empezar. Aquí solo puedes ver lo que quedó registrado.'
       });
     }
 
